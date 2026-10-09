@@ -1,0 +1,1450 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nava Gowda A S | Data Analyst</title>
+<meta name="description" content="Nava Gowda A S — Data Analyst working in institutional data analytics, MSc Data Science student, Bengaluru.">
+<meta name="author" content="Nava Gowda A S">
+<meta property="og:title" content="Nava Gowda A S | Data Analyst">
+<meta property="og:description" content="Institutional data analytics · Python · SQL · Tableau · Machine Learning">
+<meta property="og:image" content="https://navagowda.github.io/photo.jpeg">
+<meta property="og:url" content="https://navagowda.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://navagowda.github.io/">
+<meta name="theme-color" content="#06070a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2306070a'/%3E%3Cpath d='M18 46V18l28 28V18' stroke='%2367e8f9' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06070a; --bg-elev:#0c0e13; --surface:rgba(255,255,255,.035); --surface-2:rgba(255,255,255,.06);
+  --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --text:#ededf0; --muted:#8b909a; --faint:#5a5f69;
+  --c1:#67e8f9; --c2:#a78bfa; --c3:#f0abfc; --ok:#86efac; --err:#fca5a5;
+  --grad:linear-gradient(100deg,var(--c1),var(--c2) 55%,var(--c3));
+  --glow:rgba(103,232,249,.14);
+  --r:20px; --maxw:1200px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f6f3; --bg-elev:#ffffff; --surface:rgba(10,10,20,.025); --surface-2:rgba(10,10,20,.05);
+    --line:rgba(10,10,20,.09); --line-2:rgba(10,10,20,.16);
+    --text:#0b0c10; --muted:#5b606b; --faint:#9297a1;
+    --c1:#0891b2; --c2:#7c3aed; --c3:#c026d3; --ok:#15803d; --err:#b91c1c;
+    --glow:rgba(124,58,237,.10);
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f6f6f3; --bg-elev:#ffffff; --surface:rgba(10,10,20,.025); --surface-2:rgba(10,10,20,.05);
+  --line:rgba(10,10,20,.09); --line-2:rgba(10,10,20,.16);
+  --text:#0b0c10; --muted:#5b606b; --faint:#9297a1;
+  --c1:#0891b2; --c2:#7c3aed; --c3:#c026d3; --ok:#15803d; --err:#b91c1c;
+  --glow:rgba(124,58,237,.10);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 Geist,Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .5s var(--ease),color .5s var(--ease)}
+::selection{background:var(--c2);color:#fff}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:2px solid var(--c1);outline-offset:3px;border-radius:6px}
+.mono{font-family:"Geist Mono",ui-monospace,monospace}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+
+/* Ambient layers */
+.aurora{position:fixed;inset:-20vmax;z-index:-2;pointer-events:none;filter:blur(80px);opacity:.55}
+.aurora i{position:absolute;border-radius:50%;mix-blend-mode:screen;animation:drift 26s var(--ease) infinite alternate}
+.aurora i:nth-child(1){width:46vmax;height:46vmax;left:8%;top:0;background:radial-gradient(circle,rgba(103,232,249,.22),transparent 60%)}
+.aurora i:nth-child(2){width:52vmax;height:52vmax;right:0;top:20%;background:radial-gradient(circle,rgba(167,139,250,.20),transparent 60%);animation-delay:-8s}
+.aurora i:nth-child(3){width:40vmax;height:40vmax;left:30%;bottom:0;background:radial-gradient(circle,rgba(240,171,252,.12),transparent 60%);animation-delay:-16s}
+:root[data-theme="light"] .aurora{opacity:.35}
+:root[data-theme="light"] .aurora i{mix-blend-mode:multiply}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .aurora{opacity:.35}:root:not([data-theme="dark"]) .aurora i{mix-blend-mode:multiply}}
+@keyframes drift{to{transform:translate3d(6vmax,-4vmax,0) scale(1.15)}}
+.grain{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.gridlines{position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 75%);opacity:.6}
+
+/* Preloader */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;align-items:flex-end;justify-content:space-between;padding:32px;transition:transform 1s var(--ease)}
+#loader.done{transform:translateY(-100%)}
+#loader .pct{font:300 clamp(4rem,14vw,11rem)/.9 Geist,sans-serif;letter-spacing:-.05em}
+#loader .lbl{color:var(--muted);font-size:.8rem;text-align:right}
+#loader .bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--grad)}
+
+/* Cursor */
+.cursor,.cursor-dot{position:fixed;left:0;top:0;pointer-events:none;z-index:150;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor{width:36px;height:36px;border:1px solid var(--line-2);transition:width .3s var(--ease),height .3s var(--ease),background .3s,border-color .3s;display:grid;place-items:center;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--bg)}
+.cursor.hover{width:64px;height:64px;background:var(--text);border-color:transparent;mix-blend-mode:difference}
+.cursor.label{width:84px;height:84px;background:var(--text);border-color:transparent}
+.cursor-dot{width:5px;height:5px;background:var(--text)}
+@media (hover:none),(pointer:coarse){.cursor,.cursor-dot{display:none}}
+
+/* Progress + nav */
+#progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--grad);z-index:120}
+.nav{position:fixed;top:calc(16px + env(safe-area-inset-top, 0px));left:50%;transform:translateX(-50%);z-index:110;display:flex;align-items:center;gap:4px;padding:6px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--bg-elev) 70%,transparent);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 10px 40px rgba(0,0,0,.25);transition:transform .5s var(--ease)}
+.nav.hide{transform:translate(-50%,-120%)}
+.nav .logo{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--text);color:var(--bg);font-weight:600;font-size:.8rem;letter-spacing:-.02em;margin-right:4px}
+.nav-links{position:relative;display:flex}
+.nav-links a{position:relative;z-index:1;padding:7px 14px;font-size:.86rem;color:var(--muted);border-radius:999px;transition:color .3s}
+.nav-links a.active,.nav-links a:hover{color:var(--text)}
+.nav-pill{position:absolute;top:0;height:100%;border-radius:999px;background:var(--surface-2);transition:left .5s var(--ease),width .5s var(--ease),opacity .3s;opacity:0}
+.nav-btn{height:34px;min-width:34px;padding:0 10px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-size:.8rem;transition:color .2s,background .2s}
+.nav-btn:hover{color:var(--text);background:var(--surface-2)}
+.nav-btn svg{width:16px;height:16px}
+.kbd{font-family:"Geist Mono",monospace;font-size:.68rem;border:1px solid var(--line-2);border-radius:5px;padding:1px 5px}
+#menuBtn{display:none}
+@media (max-width:860px){
+  .nav{left:16px;right:16px;transform:none;justify-content:space-between}
+  .nav.hide{transform:translateY(-130%)}
+  .nav-links{display:none}
+  #menuBtn{display:inline-flex}
+  .nav .k-hint{display:none}
+}
+#mobileMenu{position:fixed;inset:0;z-index:105;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:32px 24px;clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .8s var(--ease)}
+#mobileMenu.open{clip-path:circle(150% at calc(100% - 40px) 40px)}
+#mobileMenu a{font-size:clamp(2rem,9vw,3rem);font-weight:300;letter-spacing:-.03em;padding:4px 0;border-bottom:1px solid var(--line)}
+#mobileMenu a span{font-size:.8rem;color:var(--muted);margin-right:14px;font-family:"Geist Mono",monospace}
+
+/* Type */
+h1,h2,h3{margin:0;font-weight:500;letter-spacing:-.035em;line-height:1.02}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 .74rem/1 "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--grad)}
+.sec{position:relative;padding:140px 0 40px;scroll-margin-top:40px}
+.sec-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:56px}
+.sec-head h2{font-size:clamp(2.4rem,6vw,4.6rem);margin-top:18px}
+.sec-head p{color:var(--muted);max-width:42ch;margin:0}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr}.sec{padding:100px 0 24px}}
+
+/* Split reveal */
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.split .w > span{display:inline-block;transition:transform 1.1s var(--ease)}
+.js .split.pre:not(.in) .w > span{transform:translateY(105%)}
+.reveal{transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .reveal.pre:not(.in){opacity:0;transform:translateY(30px)}
+
+/* Buttons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;font-size:.95rem;font-weight:500;overflow:hidden;isolation:isolate;transition:transform .4s var(--ease)}
+.btn.primary{background:var(--text);color:var(--bg)}
+.btn.primary::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--grad);transform:translateY(101%);transition:transform .5s var(--ease)}
+.btn.primary:hover::before{transform:none}
+.btn.primary:hover{color:#06070a}
+.btn.ghost{border:1px solid var(--line-2);background:var(--surface)}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(3px) rotate(-45deg)}
+.icon-link{width:52px;height:52px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--muted);transition:color .3s,border-color .3s,background .3s}
+.icon-link:hover{color:var(--text);border-color:var(--text)}
+.icon-link svg{width:18px;height:18px}
+
+/* Hero */
+.hero{position:relative;display:flex;align-items:center;padding:120px 0 96px;overflow:hidden}
+.hero .wrap{width:100%;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr}.sphere-wrap{order:-1;height:340px!important;margin-bottom:-20px}}
+.status{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.82rem;color:var(--muted)}
+.status img{width:24px;height:24px;border-radius:50%;object-fit:cover;object-position:50% 15%}
+.live{position:relative;width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.live::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--ok);animation:ping 2s var(--ease) infinite}
+@keyframes ping{to{transform:scale(3);opacity:0}}
+.hero h1{font-size:clamp(3rem,8.4vw,7.2rem);margin:28px 0 28px;letter-spacing:-.05em;line-height:.95}
+.hero h1 .serif{letter-spacing:-.02em}
+.hero .lead{max-width:50ch;color:var(--muted);font-size:1.08rem;margin:0 0 36px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.sphere-wrap{position:relative;height:560px;cursor:grab}
+.sphere-wrap:active{cursor:grabbing}
+#sphere{position:absolute;inset:0;width:100%;height:100%}
+.tag3d{position:absolute;left:0;top:0;padding:5px 10px;border-radius:999px;border:1px solid var(--line-2);background:color-mix(in srgb,var(--bg-elev) 70%,transparent);backdrop-filter:blur(8px);font:500 .72rem "Geist Mono",monospace;white-space:nowrap;pointer-events:none;will-change:transform,opacity}
+.hero-foot{position:absolute;left:0;right:0;bottom:28px}
+.hero-foot .wrap{display:flex;justify-content:space-between;align-items:center;color:var(--faint);font-size:.76rem}
+.scroll-cue{display:flex;align-items:center;gap:10px}
+.scroll-cue i{width:1px;height:36px;background:linear-gradient(var(--text),transparent);animation:cue 2s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* Marquee */
+.marquee{border-block:1px solid var(--line);padding:22px 0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marq 40s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{display:inline-flex;align-items:center;gap:28px;padding-right:28px;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:300;letter-spacing:-.03em;color:var(--muted);white-space:nowrap;transition:color .3s}
+.marquee span:hover{color:var(--text)}
+.marquee span::after{content:"✦";font-size:.9rem;color:var(--c2)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* Cards + spotlight */
+.card{position:relative;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:28px;overflow:hidden;isolation:isolate}
+.spot::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .4s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),var(--glow),transparent 45%)}
+.spot::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;z-index:-1;opacity:0;transition:opacity .4s;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--c1) 70%,transparent),transparent 50%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.spot:hover::before,.spot:hover::after{opacity:1}
+.label{font:500 .7rem "Geist Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+
+/* Bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(140px,auto);gap:16px}
+.b-photo{grid-column:span 4;grid-row:span 3;padding:0;display:flex;flex-direction:column}
+.b-photo .ph{position:relative;flex:1;min-height:300px;overflow:hidden}
+.b-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;filter:grayscale(.25) contrast(1.05);transform:scale(1.04);transition:transform 1.2s var(--ease),filter .6s}
+.b-photo:hover img{transform:scale(1.1);filter:none}
+.b-photo .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,color-mix(in srgb,var(--bg) 92%,transparent))}
+.b-photo .cap{position:relative;padding:0 24px 24px;margin-top:-64px;z-index:1}
+.b-photo .cap h3{font-size:1.6rem}
+.b-photo .cap p{margin:6px 0 0;color:var(--muted);font-size:.88rem}
+.b-bio{grid-column:span 8;grid-row:span 2}
+.b-bio p.big{font-size:clamp(1.25rem,2.2vw,1.7rem);line-height:1.35;letter-spacing:-.02em;margin:18px 0 0;font-weight:300}
+.b-bio p.big em{font-family:"Instrument Serif",serif;font-size:1.12em;color:var(--text)}
+.b-bio .dim{color:var(--muted)}
+.b-sm{grid-column:span 4}
+.b-time .clock{font:300 2.6rem/1 Geist,sans-serif;letter-spacing:-.04em;margin-top:16px}
+.b-time .clock small{font-size:.9rem;color:var(--muted);margin-left:6px}
+.b-stat .n{font:300 3.4rem/1 Geist,sans-serif;letter-spacing:-.05em;margin-top:14px}
+.b-stat .n sup{font-size:1.2rem;color:var(--c1)}
+.b-now ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px;font-size:.92rem}
+.b-now li{display:flex;gap:10px;align-items:flex-start}
+.b-now li i{flex:none;width:6px;height:6px;border-radius:50%;margin-top:9px;background:var(--grad)}
+.b-now li span{color:var(--muted)}
+@media (max-width:960px){.b-photo{grid-column:span 12;grid-row:auto}.b-photo .ph{min-height:360px}.b-bio{grid-column:span 12}.b-sm{grid-column:span 6}}
+@media (max-width:560px){.b-sm{grid-column:span 12}}
+
+/* Timeline */
+.journey{position:relative;display:grid;grid-template-columns:240px 1fr;gap:48px}
+@media (max-width:860px){.journey{grid-template-columns:1fr;gap:28px}}
+.j-filter{position:sticky;top:110px;align-self:start;display:flex;flex-direction:column;gap:6px}
+@media (max-width:860px){.j-filter{position:static;flex-direction:row;flex-wrap:wrap}}
+.j-filter button{text-align:left;padding:10px 16px;border-radius:12px;color:var(--muted);border:1px solid transparent;font-size:.92rem;display:flex;justify-content:space-between;gap:16px;transition:all .3s}
+.j-filter button span{font-family:"Geist Mono",monospace;font-size:.75rem;color:var(--faint)}
+.j-filter button[aria-pressed="true"]{color:var(--text);background:var(--surface);border-color:var(--line)}
+.tl{position:relative;padding-left:40px}
+.tl-line,.tl-fill{position:absolute;left:11px;top:8px;width:2px;bottom:8px;border-radius:2px}
+.tl-line{background:var(--line)}
+.tl-fill{background:var(--grad);transform-origin:top;transform:scaleY(0)}
+.tl-item{position:relative;margin-bottom:20px;transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.tl-item.off{display:none}
+.tl-node{position:absolute;left:-36px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--line-2);transition:border-color .4s,box-shadow .4s}
+.tl-item.lit .tl-node{border-color:var(--c1);box-shadow:0 0 0 6px color-mix(in srgb,var(--c1) 16%,transparent)}
+.tl-item .card{cursor:pointer;transition:border-color .4s,transform .4s var(--ease)}
+.tl-item .card:hover{border-color:var(--line-2)}
+.tl-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+.tl-head h3{font-size:clamp(1.25rem,2.4vw,1.6rem);letter-spacing:-.025em}
+.tl-when{font:400 .8rem "Geist Mono",monospace;color:var(--muted)}
+.tl-org{color:var(--muted);margin-top:6px;font-size:.95rem}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);font:500 .7rem "Geist Mono",monospace;letter-spacing:.04em;color:var(--muted);margin:14px 6px 0 0}
+.pill.now{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 40%,transparent)}
+.tl-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.tl-more > div{overflow:hidden}
+.tl-item.open .tl-more{grid-template-rows:1fr}
+.tl-more p{color:var(--muted);margin:18px 0 0;max-width:62ch}
+.tl-more ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+.tl-plus{position:absolute;right:24px;top:28px;width:28px;height:28px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:transform .5s var(--ease)}
+.tl-item.open .tl-plus{transform:rotate(45deg)}
+.tl-head{padding-right:44px}
+
+/* Workflow */
+.flow{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}
+@media (max-width:900px){.flow{grid-template-columns:1fr}}
+.steps{display:flex;flex-direction:column;gap:8px}
+.step{position:relative;text-align:left;padding:20px 22px;border-radius:16px;border:1px solid transparent;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;transition:all .4s var(--ease)}
+.step .k{font:500 .78rem "Geist Mono",monospace;color:var(--faint);padding-top:4px}
+.step h3{font-size:1.25rem;letter-spacing:-.02em}
+.step p{margin:6px 0 0;color:var(--muted);font-size:.9rem;display:none}
+.step .bar{position:absolute;left:22px;right:22px;bottom:10px;height:2px;border-radius:2px;background:var(--line);overflow:hidden;display:none}
+.step .bar i{display:block;height:100%;width:0;background:var(--grad)}
+.step[aria-selected="true"]{background:var(--surface);border-color:var(--line);padding-bottom:28px}
+.step[aria-selected="true"] p,.step[aria-selected="true"] .bar{display:block}
+.step[aria-selected="true"] .k{color:var(--c1)}
+.viz{min-height:420px;display:flex;flex-direction:column}
+.viz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.viz svg{width:100%;flex:1;min-height:300px}
+.viz .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.dots3{display:flex;gap:6px}.dots3 i{width:10px;height:10px;border-radius:50%;background:var(--line-2)}
+
+/* SQL console */
+.console{border:1px solid var(--line);border-radius:var(--r);background:color-mix(in srgb,var(--bg-elev) 85%,transparent);overflow:hidden;box-shadow:0 40px 120px -40px rgba(0,0,0,.6)}
+.c-bar{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+.c-bar .dots3 i:nth-child(1){background:#ff5f57}.c-bar .dots3 i:nth-child(2){background:#febc2e}.c-bar .dots3 i:nth-child(3){background:#28c840}
+.c-body{display:grid;grid-template-columns:220px 1fr}
+@media (max-width:820px){.c-body{grid-template-columns:1fr}.c-side{display:none}}
+.c-side{border-right:1px solid var(--line);padding:16px;font-size:.84rem}
+.c-side .tbl{margin-bottom:12px}
+.c-side .tbl button{display:flex;align-items:center;gap:8px;width:100%;padding:6px 8px;border-radius:8px;color:var(--text);font-family:"Geist Mono",monospace;font-size:.8rem}
+.c-side .tbl button:hover{background:var(--surface-2)}
+.c-side .cols{padding-left:26px;color:var(--faint);font:400 .74rem/1.9 "Geist Mono",monospace}
+.c-main{min-width:0;display:flex;flex-direction:column}
+.c-chips{display:flex;gap:6px;padding:12px 16px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.c-chips button{flex:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);font-size:.78rem;color:var(--muted);transition:all .2s}
+.c-chips button:hover{color:var(--text);border-color:var(--line-2)}
+.editor{position:relative;font:400 .92rem/1.6 "Geist Mono",monospace;min-height:120px}
+.editor pre,.editor textarea{margin:0;padding:18px 20px 18px 56px;font:inherit;white-space:pre-wrap;word-break:break-word;border:0;min-height:120px}
+.editor pre{pointer-events:none;color:var(--text)}
+.editor textarea{position:absolute;inset:0;width:100%;height:100%;resize:none;background:transparent;color:transparent;caret-color:var(--c1);outline:none}
+.editor .gut{position:absolute;left:0;top:18px;width:40px;text-align:right;color:var(--faint);font-size:.8rem;line-height:1.75}
+.tok-k{color:var(--c2)}.tok-s{color:var(--ok)}.tok-n{color:var(--c3)}.tok-f{color:var(--c1)}
+.c-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+@media (max-width:640px){.c-actions > span{display:none}.c-actions{justify-content:flex-end}.run .kbd{display:none}}
+.run{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:10px;background:var(--text);color:var(--bg);font-size:.82rem;font-weight:500}
+.run:active{transform:scale(.97)}
+.result{overflow:auto;max-height:340px;min-height:180px}
+.result table{width:100%;border-collapse:collapse;font:400 .82rem "Geist Mono",monospace}
+.result th{position:sticky;top:0;background:var(--bg-elev);text-align:left;font-weight:500;color:var(--muted);padding:10px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+.result td{padding:10px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+.result tr{animation:rowIn .5s var(--ease) both}
+.result tbody tr:hover td{background:var(--surface)}
+@keyframes rowIn{from{opacity:0;transform:translateY(6px)}}
+.result .msg{padding:22px 16px;font:400 .85rem "Geist Mono",monospace;color:var(--muted)}
+.result .msg.err{color:var(--err)}
+.null{color:var(--faint);font-style:italic}
+
+/* Certifications */
+.cert-top{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media (max-width:900px){.cert-top{grid-template-columns:1fr}}
+.chart-card svg{width:100%;height:220px;overflow:visible}
+.chart-tip{position:absolute;pointer-events:none;padding:10px 12px;border-radius:12px;background:var(--bg-elev);border:1px solid var(--line-2);font-size:.78rem;box-shadow:0 10px 30px rgba(0,0,0,.3);opacity:0;transition:opacity .2s;max-width:260px;z-index:5}
+.issuers{display:grid;gap:14px;margin-top:18px}
+.issuer-row .top{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:8px}
+.issuer-row .top span:last-child{font-family:"Geist Mono",monospace;color:var(--muted)}
+.issuer-row .track{height:6px;border-radius:6px;background:var(--surface-2);overflow:hidden}
+.issuer-row .track i{display:block;height:100%;width:0;border-radius:6px;background:var(--grad);transition:width 1.4s var(--ease)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.filters button{padding:8px 16px;border-radius:999px;border:1px solid var(--line);font-size:.84rem;color:var(--muted);transition:all .3s}
+.filters button[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:960px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.cert-grid{grid-template-columns:1fr}}
+.cert{display:flex;flex-direction:column;min-height:230px;transition:transform .6s var(--ease),opacity .4s}
+.cert.hide{display:none}
+.cert .logo{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font:600 .78rem Geist,sans-serif;border:1px solid var(--line-2);background:var(--surface-2)}
+.cert h3{font-size:1.2rem;letter-spacing:-.02em;line-height:1.2;margin:18px 0 6px}
+.cert .meta{color:var(--muted);font-size:.86rem}
+.cert .cid{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:8px;font:400 .74rem "Geist Mono",monospace;color:var(--faint);border-top:1px dashed var(--line);overflow:hidden}
+.cert .cid > span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.copy{flex:none;padding:4px 10px;border-radius:8px;border:1px solid var(--line);color:var(--muted);font:500 .7rem "Geist Mono",monospace}
+.copy:hover{color:var(--text);border-color:var(--line-2)}
+
+.cert .thumb{display:block;width:100%;aspect-ratio:1.414/1;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff;margin-bottom:16px;padding:0;cursor:zoom-in;position:relative}
+.cert .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .8s var(--ease)}
+.cert .thumb:hover img{transform:scale(1.05)}
+.cert .thumb.tall img{object-position:50% 22%}
+.cert.feature{grid-column:span 1;border-color:color-mix(in srgb,var(--c1) 35%,var(--line))}
+.pill.dist{color:var(--c1);border-color:color-mix(in srgb,var(--c1) 45%,transparent)}
+.pill.warn{color:var(--c3);border-color:color-mix(in srgb,var(--c3) 45%,transparent)}
+.cert-actions{display:flex;gap:6px;flex:none}
+a.copy:hover{text-decoration:none}
+
+/* Microsoft Learn */
+.ms{display:grid;grid-template-columns:300px 1fr;gap:28px;margin-top:16px;padding:28px}
+@media (max-width:860px){.ms{grid-template-columns:1fr}}
+.ms-side{display:flex;flex-direction:column;gap:14px;min-width:0}
+.ms-name{font-size:1.5rem;letter-spacing:-.03em}
+.ms-level{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.ms-bar{height:6px;border-radius:6px;background:var(--surface-2);overflow:hidden}
+.ms-bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:6px;transition:width 1.4s var(--ease)}
+.ms-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ms-stats div{padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.ms-stats b{display:block;font:300 1.7rem/1 Geist,sans-serif;letter-spacing:-.04em}
+.ms-stats span{font-size:.72rem;color:var(--muted)}
+.ms-topics{display:grid;gap:8px}
+.ms-topics .row{display:grid;grid-template-columns:110px 1fr 28px;gap:10px;align-items:center;font-size:.82rem}
+.ms-topics .row span:last-child{text-align:right;font-family:"Geist Mono",monospace;color:var(--muted)}
+.ms-topics .tr{height:6px;border-radius:6px;background:var(--surface-2);overflow:hidden}
+.ms-topics .tr i{display:block;height:100%;border-radius:6px}
+.ms-main{min-width:0}
+.ms-list{max-height:420px;overflow:auto;border-top:1px solid var(--line);scrollbar-width:thin}
+.ms-item{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:center;padding:12px 4px;border-bottom:1px solid var(--line);animation:rowIn .45s var(--ease) both}
+.ms-item .ic{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--surface-2);border:1px solid var(--line)}
+.ms-item .ic svg{width:14px;height:14px}
+.ms-item .t{font-size:.92rem;min-width:0}
+.ms-item .t small{display:block;color:var(--faint);font-size:.74rem;margin-top:2px}
+.ms-item .d{font:400 .76rem "Geist Mono",monospace;color:var(--muted);white-space:nowrap;text-align:right}
+.ms-item .d em{display:block;font-style:normal;color:var(--ok);font-size:.68rem;margin-top:2px}
+
+/* Projects */
+.proj-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.proj{grid-column:span 2;display:flex;flex-direction:column;cursor:pointer;text-align:left;min-width:0;transition:transform .5s var(--ease),border-color .3s}
+.proj:nth-child(-n+2){grid-column:span 3}
+.proj:hover{border-color:var(--line-2)}
+.proj.hide{display:none}
+.proj .art{height:150px;border-radius:14px;border:1px solid var(--line);background:var(--surface-2);overflow:hidden;margin-bottom:20px}
+.proj .art svg{width:100%;height:100%}
+.proj .k{font:500 .7rem "Geist Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.proj h3{font-size:clamp(1.25rem,2vw,1.55rem);letter-spacing:-.025em;margin:8px 0 10px;line-height:1.15}
+.proj p{color:var(--muted);font-size:.92rem;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.proj .foot{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.proj .foot .pill{margin:0}
+.proj .more{font-size:.84rem;color:var(--text);display:inline-flex;gap:6px;align-items:center}
+@media (max-width:900px){.proj,.proj:nth-child(-n+2){grid-column:span 3}.proj:last-child{grid-column:1/-1}}
+@media (max-width:600px){.proj-grid{grid-template-columns:1fr}.proj,.proj:nth-child(-n+2),.proj:last-child{grid-column:auto}}
+
+/* Modal */
+#modal{position:fixed;inset:0;z-index:175;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px 16px}
+#modal.open{display:flex}
+.m-box{position:relative;width:min(960px,100%);max-height:88vh;overflow:auto;background:var(--bg-elev);border:1px solid var(--line-2);border-radius:20px;box-shadow:0 40px 120px rgba(0,0,0,.5);animation:pop .45s var(--ease)}
+.m-close{position:sticky;top:12px;float:right;margin:12px 12px 0 0;width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);background:var(--bg-elev);display:grid;place-items:center;z-index:2}
+.m-img{background:#fff;display:flex;justify-content:center;border-bottom:1px solid var(--line)}
+.m-img img{max-height:66vh;width:auto;max-width:100%;display:block}
+.m-body{padding:24px 28px 28px}
+.m-body h3{font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.03em;margin:6px 0 8px}
+.m-body .meta{color:var(--muted);font-size:.92rem}
+.m-body h4{font:500 .72rem "Geist Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:24px 0 8px;font-weight:500}
+.m-body p,.m-body li{color:var(--muted);max-width:68ch}
+.m-body ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.m-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px}
+.m-nav{display:flex;gap:8px}
+.m-link{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line-2);font-size:.86rem;color:var(--text)}
+.m-link:hover{text-decoration:none;background:var(--surface-2)}
+.m-link.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.m-cert{display:flex;gap:16px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:14px;margin-top:8px;cursor:zoom-in;width:100%;text-align:left}
+.m-cert img{width:120px;border-radius:8px;border:1px solid var(--line)}
+
+/* Dashboard */
+.dash{border:1px solid var(--line);border-radius:var(--r);background:color-mix(in srgb,var(--bg-elev) 88%,transparent);padding:22px;box-shadow:0 40px 120px -40px rgba(0,0,0,.5)}
+.d-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.d-title{font-size:1.2rem;font-weight:500;letter-spacing:-.02em}
+.d-sub{color:var(--faint);font-size:.74rem;margin-top:4px}
+.d-btn{height:34px;padding:0 14px;border-radius:10px;border:1px solid var(--line-2);font-size:.82rem;color:var(--muted)}
+.d-btn:hover{color:var(--text)}
+.d-controls{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:flex-end;padding:18px 0}
+.d-field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.d-field label{font:500 .68rem "Geist Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.d-field label .mono{letter-spacing:0;text-transform:none;color:var(--muted);margin-left:6px}
+.d-select{height:38px;padding:0 32px 0 12px;border-radius:10px;border:1px solid var(--line-2);background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b909a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;color:var(--text);font:inherit;font-size:.88rem;appearance:none;-webkit-appearance:none}
+.d-select option{background:var(--bg-elev);color:var(--text)}
+.d-vs{color:var(--faint);padding-bottom:10px}
+.d-chips{display:flex;gap:6px;flex-wrap:wrap}
+.d-chips button{height:38px;padding:0 12px;border-radius:10px;border:1px solid var(--line);font-size:.82rem;color:var(--muted)}
+.d-chips button[aria-pressed="true"]{color:var(--text);border-color:var(--line-2);background:var(--surface-2)}
+.d-range{min-width:200px;flex:1;max-width:280px}
+.dual{position:relative;height:38px}
+.dual input{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);width:100%;margin:0;background:none;pointer-events:none;-webkit-appearance:none;appearance:none;height:4px}
+.dual input::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:var(--line-2)}
+.dual input:last-child::-webkit-slider-runnable-track{background:transparent}
+.dual input::-moz-range-track{height:4px;border-radius:4px;background:var(--line-2)}
+.dual input::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:18px;height:18px;border-radius:50%;background:var(--text);border:3px solid var(--bg-elev);margin-top:-7px;cursor:pointer}
+.dual input::-moz-range-thumb{pointer-events:auto;width:14px;height:14px;border-radius:50%;background:var(--text);border:3px solid var(--bg-elev);cursor:pointer}
+.d-insight{margin:0 0 16px;padding:14px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:.95rem;line-height:1.5}
+.d-insight .a{color:var(--c1)}.d-insight .b{color:var(--c2)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{padding:16px;border-radius:14px;border:1px solid var(--line);background:var(--surface);min-width:0}
+.kpi .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:8px;font-variant-numeric:tabular-nums}
+.kpi .row .v{font-size:clamp(1.1rem,2vw,1.45rem);font-weight:400;letter-spacing:-.03em;white-space:nowrap}
+.kpi .row .r{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted);white-space:nowrap}
+.sw{width:8px;height:8px;border-radius:2px;display:inline-block}
+.sw.a{background:var(--c1)}.sw.b{background:var(--c2)}
+.kpi .delta{margin-top:10px;font:500 .74rem "Geist Mono",monospace}
+.up{color:var(--ok)}.down{color:var(--err)}
+.d-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:12px;margin-top:12px}
+@media (max-width:900px){.d-grid{grid-template-columns:1fr}}
+.d-card{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--surface);min-width:0;position:relative}
+.d-ct{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.legend{display:flex;gap:12px;font-size:.78rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.d-chart{position:relative}
+.d-chart svg{width:100%;display:block;overflow:visible}
+.d-tip{position:absolute;pointer-events:none;padding:8px 10px;border-radius:10px;background:var(--bg-elev);border:1px solid var(--line-2);font-size:.76rem;box-shadow:0 10px 30px rgba(0,0,0,.3);opacity:0;transition:opacity .15s;z-index:3;white-space:nowrap;font-variant-numeric:tabular-nums}
+.d-table{overflow-x:auto}
+.d-table table{width:100%;border-collapse:collapse;font-size:.86rem;font-variant-numeric:tabular-nums}
+.d-table th{text-align:left;font:500 .68rem "Geist Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.d-table td{padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.d-table td.num{text-align:right}
+.d-table th.num{text-align:right}
+.gap{position:relative;height:10px;min-width:160px;background:linear-gradient(90deg,transparent calc(50% - .5px),var(--line-2) calc(50% - .5px),var(--line-2) calc(50% + .5px),transparent calc(50% + .5px))}
+.gap i{position:absolute;top:0;height:100%;border-radius:3px;transition:all .6s var(--ease)}
+.d-note{color:var(--faint);font-size:.78rem;margin:14px 0 0}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:820px){.skills{grid-template-columns:1fr}}
+.skill-card h3{font-size:1.5rem;margin:14px 0 18px;letter-spacing:-.025em}
+.skill-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:.95rem}
+.skill-row .ev{font:400 .74rem "Geist Mono",monospace;color:var(--faint);text-align:right}
+.skill-card .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--surface-2);border:1px solid var(--line)}
+.skill-card .ico svg{width:20px;height:20px;stroke:var(--c1)}
+
+
+/* Contact */
+.contact{text-align:center;padding:160px 0 80px}
+.contact h2{font-size:clamp(3rem,10vw,9rem);letter-spacing:-.06em;line-height:.9}
+.contact .mail{display:inline-flex;align-items:center;gap:14px;margin-top:40px;font-size:clamp(1.1rem,3vw,1.8rem);font-weight:300;letter-spacing:-.02em;padding-bottom:6px;border-bottom:1px solid var(--line-2);transition:border-color .3s}
+.contact .mail:hover{border-color:var(--text)}
+.contact-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:40px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--faint);font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Toast + palette */
+#toast{position:fixed;left:50%;bottom:28px;z-index:160;transform:translate(-50%,140%);padding:12px 18px;border-radius:14px;background:var(--text);color:var(--bg);font-size:.88rem;transition:transform .5s var(--ease)}
+#toast.show{transform:translate(-50%,0)}
+#palette{position:fixed;inset:0;z-index:170;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;padding:14vh 16px}
+#palette.open{display:flex}
+#palette .box{width:min(600px,100%);border:1px solid var(--line-2);border-radius:18px;background:var(--bg-elev);overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.5);animation:pop .4s var(--ease)}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(-8px)}}
+#palette input{width:100%;padding:18px 20px;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:1.05rem;outline:none}
+#palette ul{list-style:none;margin:0;padding:8px;max-height:52vh;overflow:auto}
+#palette li{display:flex;justify-content:space-between;gap:12px;padding:11px 12px;border-radius:10px;cursor:pointer;font-size:.92rem}
+#palette li small{color:var(--faint);font-family:"Geist Mono",monospace;font-size:.72rem}
+#palette li.sel{background:var(--surface-2)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal,.split .w>span{opacity:1!important;transform:none!important}
+  #loader{display:none}
+}
+@media print{
+  .nav,#progress,.cursor,.cursor-dot,.aurora,.grain,#loader,.sphere-wrap,.marquee,.console,#flow,.hero-foot,.contact-actions,.filters,.copy,#palette,#toast,#mobileMenu{display:none!important}
+  :root{--bg:#fff;--text:#000;--muted:#333;--faint:#666;--line:#ccc;--surface:#fff}
+  .reveal,.split .w>span{opacity:1!important;transform:none!important}
+  .hero{min-height:auto;padding:0}
+  .sec{padding:24px 0;break-inside:avoid}
+  .tl-more{grid-template-rows:1fr!important}
+  .grad-text{color:#000;background:none}
+}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div><div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <a href="#top" class="logo" aria-label="Home">NG</a>
+  <div class="nav-links" id="navLinks">
+    <span class="nav-pill" id="navPill"></span>
+    <a href="#about">About</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#dashboard">Dashboard</a><a href="#console">Query</a><a href="#certs">Credentials</a><a href="#contact">Contact</a>
+  </div>
+  <button class="nav-btn k-hint" id="palBtn" aria-label="Open quick search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="kbd">Ctrl K</span></button>
+  <button class="nav-btn" id="themeBtn" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg></button>
+  <button class="nav-btn" id="menuBtn" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16M4 16h16"/></svg></button>
+</nav>
+<div id="mobileMenu" aria-hidden="true"></div>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="gridlines"></div>
+  <div class="wrap">
+    <div>
+      <div class="status reveal"><img src="photo.jpeg" alt=""><span class="live"></span>Data Analyst at SDUAHER · Bengaluru</div>
+      <h1 class="split" data-split>Turning raw data into <span class="serif grad-text">decisions</span> that matter.</h1>
+      <p class="lead reveal">I am Nava Gowda A S, a data analyst working in institutional data analytics, and an MSc Data Science student. I collect, analyse, report and visualise data so that institutions can act on evidence.</p>
+      <div class="hero-cta reveal">
+        <a class="btn primary magnetic" href="#console" data-cursor="Query">Query my profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn ghost magnetic" href="#projects">See projects</a>
+        <a class="icon-link magnetic" href="https://www.linkedin.com/in/nava-gowda-a-s-0970102b2/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.84 0-2.12 1.43-2.12 2.9V21H9z"/></svg></a>
+        <a class="icon-link magnetic" href="https://github.com/navagowda" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+        <a class="icon-link magnetic" href="mailto:navagowdaas@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      </div>
+    </div>
+    <div class="sphere-wrap reveal" id="sphereWrap" data-cursor="Drag" aria-label="Interactive 3D sphere of skills; drag to rotate" role="img">
+      <canvas id="sphere"></canvas>
+    </div>
+  </div>
+  <div class="hero-foot"><div class="wrap"><span class="scroll-cue"><i></i>Scroll to explore</span><span class="mono" id="heroClock">Bengaluru — IST</span></div></div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">01 — About</span><h2 class="split" data-split>Data with a <span class="serif">purpose</span>.</h2></div><p class="reveal">I work where analytics meets institutional decision-making, and I keep learning to solve real-world problems.</p></div>
+    <div class="bento">
+      <div class="card spot b-photo reveal tilt">
+        <div class="ph"><img src="photo.jpeg" alt="Portrait of Nava Gowda A S"></div>
+        <div class="cap"><h3>Nava Gowda A S</h3><p>Data Analyst · MSc Data Science (pursuing)</p></div>
+      </div>
+      <div class="card spot b-bio reveal">
+        <span class="label">Summary</span>
+        <p class="big">Data analyst with experience in <em>institutional data analytics</em>, <span class="dim">supporting data-driven decision-making through data collection, analysis, reporting and visualisation. Currently pursuing an MSc in Data Science to deepen expertise in analytics, machine learning and data-driven solutions.</span></p>
+      </div>
+      <div class="card spot b-sm b-time reveal">
+        <span class="label">Based in</span>
+        <div class="clock" id="clock">--:--<small>IST</small></div>
+        <div style="color:var(--muted);font-size:.9rem;margin-top:8px">Greater Bengaluru Area, Karnataka</div>
+      </div>
+      <div class="card spot b-sm b-stat reveal">
+        <span class="label">Credentials earned</span>
+        <div class="n"><span class="count" data-n="12">0</span></div>
+        <div style="color:var(--muted);font-size:.9rem;margin-top:8px">Including 2 Master's programmes with distinction, plus 28 Microsoft Learn badges</div>
+      </div>
+      <div class="card spot b-sm b-now reveal">
+        <span class="label">Right now</span>
+        <ul>
+          <li><i></i><div>Data Analyst<br><span>SDUAHER, since 04-2026</span></div></li>
+          <li><i></i><div>MSc Data Science<br><span>Karnataka State Open University</span></div></li>
+        </ul>
+      </div>
+      <div class="card spot b-sm b-stat reveal">
+        <span class="label">Projects passed</span>
+        <div class="n"><span class="count" data-n="5">0</span></div>
+        <div style="color:var(--muted);font-size:.9rem;margin-top:8px">Each on the first attempt, across SQL, Excel, Tableau and machine learning</div>
+      </div>
+      <div class="card spot b-sm b-stat reveal" style="grid-column:span 8" id="openTo">
+        <span class="label">Open to</span>
+        <p style="font-size:clamp(1.2rem,2vw,1.5rem);font-weight:300;letter-spacing:-.02em;margin:14px 0 0;line-height:1.35">Collaborating on impactful <span class="serif grad-text" style="font-size:1.15em">data analytics and AI</span> projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="sec" id="journey">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">02 — Journey</span><h2 class="split" data-split>From code to <span class="serif">insight</span>.</h2></div><p class="reveal">Select any entry to expand it. The line fills as you scroll.</p></div>
+    <div class="journey">
+      <div class="j-filter reveal" id="jFilter"></div>
+      <div class="tl" id="tl"><div class="tl-line"></div><div class="tl-fill" id="tlFill"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="sec" id="flow">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">03 — Process</span><h2 class="split" data-split>How I work with <span class="serif">data</span>.</h2></div><p class="reveal">Five stages, from raw records to reports people can act on. Steps advance on their own; select one to pause.</p></div>
+    <div class="flow">
+      <div class="steps reveal" id="steps" role="tablist"></div>
+      <div class="card viz reveal" id="viz">
+        <div class="viz-top"><span class="label" id="vizLabel"></span><span class="label">Illustrative visual</span></div>
+        <svg id="vizSvg" viewBox="0 0 480 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+        <div class="tools" id="vizTools"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="sec" id="projects">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">04 — Projects</span><h2 class="split" data-split>Work that <span class="serif grad-text">passed review</span>.</h2></div><p class="reveal">Five course-end projects, each assessed by Simplilearn and passed on the first of three attempts. Select a project to read the brief.</p></div>
+    <div class="filters reveal" id="projFilters"></div>
+    <div class="proj-grid" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- LIVE DASHBOARD -->
+<section class="sec" id="dashboard">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">05 — Live dashboard</span><h2 class="split" data-split>Compare any two <span class="serif">regions</span>.</h2></div><p class="reveal">A working rebuild of the region-comparison dashboard from my Tableau project. Every filter recalculates the figures in your browser.</p></div>
+    <div class="dash reveal" id="dash">
+      <div class="d-head">
+        <div><div class="d-title">Regional sales performance, 2025</div><div class="d-sub mono">2,600+ orders · 4 regions · 3 categories · 9 sub-categories</div></div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="pill warn" style="margin:0">Synthetic sample data</span><button class="d-btn" id="dReset">Reset filters</button></div>
+      </div>
+      <div class="d-controls">
+        <div class="d-field"><label for="dA">Region A</label><select id="dA" class="d-select"></select></div>
+        <div class="d-vs mono">vs</div>
+        <div class="d-field"><label for="dB">Region B</label><select id="dB" class="d-select"></select></div>
+        <div class="d-field"><label for="dSeg">Segment</label><select id="dSeg" class="d-select"></select></div>
+        <div class="d-field d-range"><label for="dFrom">Months <span class="mono" id="dRangeLbl"></span></label>
+          <div class="dual"><input type="range" id="dFrom" min="0" max="11" value="0" aria-label="From month"><input type="range" id="dTo" min="0" max="11" value="11" aria-label="To month"></div></div>
+        <div class="d-field"><label>Category</label><div class="d-chips" id="dCats"></div></div>
+      </div>
+      <p class="d-insight" id="dInsight"></p>
+      <div class="kpis" id="dKpis"></div>
+      <div class="d-grid">
+        <div class="d-card"><div class="d-ct"><span class="label">Monthly sales</span><span class="legend" id="dLegend"></span></div><div class="d-chart" id="dLine"></div></div>
+        <div class="d-card"><div class="d-ct"><span class="label">Sales by category</span></div><div class="d-chart" id="dBars"></div></div>
+      </div>
+      <div class="d-card" style="margin-top:12px"><div class="d-ct"><span class="label">Sub-category gap · Region A minus Region B</span></div><div class="d-table" id="dTable"></div></div>
+      <p class="d-note">Data is generated in the browser from a fixed seed so the figures stay the same on every visit. It is for demonstration only and does not represent any real organisation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SQL CONSOLE -->
+<section class="sec" id="console">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">06 — Query</span><h2 class="split" data-split>Do not read my CV. <span class="serif grad-text">Query it.</span></h2></div><p class="reveal">A small SQL engine running in your browser on my real profile data. Try a sample, or write your own and press Ctrl + Enter.</p></div>
+    <div class="console reveal">
+      <div class="c-bar"><span class="dots3"><i></i><i></i><i></i></span><span class="mono">nava_gowda.db</span><span style="margin-left:auto" class="mono" id="cStatus">ready</span></div>
+      <div class="c-body">
+        <aside class="c-side" id="cSide"><div class="label" style="margin-bottom:10px">Tables</div></aside>
+        <div class="c-main">
+          <div class="c-chips" id="cChips"></div>
+          <div class="editor"><div class="gut" id="gut">1</div><pre id="hl" aria-hidden="true"></pre><textarea id="sql" spellcheck="false" aria-label="SQL query"></textarea></div>
+          <div class="c-actions"><span class="mono">Supports SELECT · WHERE · AND · LIKE · ORDER BY · LIMIT · COUNT(*) · SHOW TABLES · DESCRIBE</span><button class="run" id="runBtn">Run <span class="kbd" style="border-color:currentColor;opacity:.6">Ctrl ↵</span></button></div>
+          <div class="result" id="result"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="sec" id="certs">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">07 — Credentials</span><h2 class="split" data-split>Proof of <span class="serif">practice</span>.</h2></div><p class="reveal">Open any certificate to see the original. Programme certificates link to Simplilearn's own verification page.</p></div>
+    <div class="cert-top">
+      <div class="card spot chart-card reveal" id="chartCard">
+        <span class="label">Learning momentum · cumulative credentials by month</span>
+        <svg id="certChart" role="img" aria-label="Cumulative credentials by month from September 2025 to March 2026"></svg>
+        <div class="chart-tip" id="chartTip"></div>
+      </div>
+      <div class="card spot reveal">
+        <span class="label">By issuer</span>
+        <div class="issuers" id="issuers"></div>
+      </div>
+    </div>
+    <div class="filters reveal" id="certFilters"></div>
+    <div class="cert-grid" id="certGrid"></div>
+    <div class="card spot ms reveal" id="msLearn">
+      <div class="ms-side">
+        <span class="label">Microsoft Learn transcript</span>
+        <div class="ms-name">Nava Gowda A S</div>
+        <div class="ms-level"><span class="mono">Level <span id="msLvl"></span></span><span class="mono" id="msXp"></span></div>
+        <div class="ms-bar"><i id="msBar"></i></div>
+        <div class="ms-stats" id="msStats"></div>
+        <div class="ms-topics" id="msTopics"></div>
+        <a class="m-link primary" id="msLink" target="_blank" rel="noopener" style="margin-top:auto;align-self:flex-start">View public profile ↗</a>
+      </div>
+      <div class="ms-main">
+        <div class="filters" id="msTabs" style="margin-bottom:12px"></div>
+        <div class="ms-list" id="msList"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec" id="skills">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">08 — Capabilities</span><h2 class="split" data-split>The <span class="serif">toolkit</span>.</h2></div><p class="reveal">No self-rated percentage bars. Each skill is paired with the evidence behind it.</p></div>
+    <div class="skills" id="skillGrid"></div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">09 — Contact</span>
+    <h2 class="split" data-split style="margin-top:24px">Let us make data <span class="serif grad-text">useful</span>.</h2>
+    <a class="mail magnetic" href="mailto:navagowdaas@gmail.com" data-cursor="Write">navagowdaas@gmail.com <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    <div class="contact-actions">
+      <button class="btn ghost magnetic" id="copyMail">Copy email</button>
+      <a class="btn ghost magnetic" href="https://github.com/navagowda" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn primary magnetic" href="https://www.linkedin.com/in/nava-gowda-a-s-0970102b2/" target="_blank" rel="noopener">Connect on LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> Nava Gowda A S · Greater Bengaluru Area</span><span class="mono">Press Ctrl K anywhere · <a href="#top">Back to top ↑</a></span></div></footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="m-box" id="mBox"></div></div>
+<div id="palette" role="dialog" aria-label="Quick search"><div class="box"><input id="palInput" placeholder="Jump to a section, run a query, change theme…" aria-label="Search"><ul id="palList"></ul></div></div>
+
+<script>
+/* ============================================================
+   PROFILE DATA — sourced from LinkedIn profile and résumé PDFs
+   ============================================================ */
+const DATA = {
+  experience: [
+    {role:"Data Analyst", organisation:"Sri Devaraj Urs Academy of Higher Education and Research (SDUAHER)", employment:"Full-time", start:"04-2026", end:null, location:"Karnataka · On-site"}
+  ],
+  education: [
+    {programme:"MSc, Data Science", institution:"Karnataka State Open University", start:"09-2025", end:null, status:"Pursuing"},
+    {programme:"Professional Certificate, Data Science and Data Analytics", institution:"Simplilearn", start:null, end:"07-2025", status:"Completed"},
+    {programme:"BCA, Computer Applications", institution:"Bangalore North University", start:"07-2022", end:"08-2025", status:"Completed"}
+  ],
+  // Dates and codes are taken from the certificate PDFs; the last three entries come from LinkedIn.
+  certifications: [
+    {title:"Data Analyst", issuer:"Simplilearn", issued:"18-02-2026", type:"Master's programme · with distinction", credential_id:"174822785", verify:"https://success.simplilearn.com/50ea2a3f-ab73-452a-aa5d-50f33e9c2d66", img:"certs/cert-data-analyst.jpg", tall:true},
+    {title:"Data Scientist", issuer:"Simplilearn", issued:"10-12-2025", type:"Master's programme · with distinction", credential_id:"168919124", verify:"https://success.simplilearn.com/bc511ef6-74c0-466e-bf63-f3cfac5b79a1", img:"certs/cert-data-scientist.jpg", tall:true},
+    {title:"Machine Learning using Python", issuer:"Simplilearn", issued:"12-03-2026", type:"Course · project and test passed", credential_id:"9951147", img:"certs/cert-ml-python.jpg"},
+    {title:"Business Analytics with Excel", issuer:"Simplilearn", issued:"22-02-2026", type:"Course · project passed", credential_id:"9877270", img:"certs/cert-excel.jpg"},
+    {title:"Capstone: Healthcare Insurance Cost Analysis", issuer:"Simplilearn", issued:"05-02-2026", type:"Capstone project", credential_id:"9806705", img:"certs/cert-capstone.jpg"},
+    {title:"Tableau Desktop Specialist Certification Training", issuer:"Simplilearn", issued:"02-02-2026", type:"Course · project and test passed", credential_id:"9787380", img:"certs/cert-tableau.jpg"},
+    {title:"SQL Certification Course", issuer:"Simplilearn", issued:"02-01-2026", type:"Course", credential_id:"9110744", img:"certs/cert-sql.jpg"},
+    {title:"Data Science with Python", issuer:"Simplilearn", issued:"16-12-2025", type:"Course · project and test passed", credential_id:"9587861", img:"certs/cert-ds-python.jpg"},
+    {title:"Programming Essentials", issuer:"Simplilearn", issued:"25-09-2025", type:"Course · project passed", credential_id:"9046745", img:"certs/cert-programming.jpg"},
+    {title:"Python 101 for Data Science", issuer:"Simplilearn", issued:"10-2025", type:"Course", credential_id:"f5bdfa56623d4112b4f34673540866e2"},
+    {title:"Python for Data Science", issuer:"IBM", issued:"10-2025", type:"Course", credential_id:"f5bdfa56623d4112b4f34673540866e2"},
+    {title:"Design and manage analytics solutions using Power BI", issuer:"Microsoft Learn", issued:"11-03-2026", type:"Course", credential_id:null, link:"https://learn.microsoft.com/en-us/users/navagowdaas-7630/"}
+  ],
+  // Microsoft Learn transcript (profile dates converted from US format to DD-MM-YYYY)
+  mslearn: {
+    profile:"https://learn.microsoft.com/en-us/users/navagowdaas-7630/", level:7, xp:38775, next:48499, badges:28, trophies:8,
+    paths:[
+      ["Transform ideas into action with Copilot Chat (Basic)","02-08-2026","Copilot and AI"],
+      ["Manage and secure Power BI","11-03-2026","Power BI"],
+      ["Design effective reports in Power BI","11-03-2026","Power BI"],
+      ["Prepare and visualize data with Microsoft Power BI","11-03-2026","Power BI"],
+      ["Model data with Power BI","11-03-2026","Power BI"],
+      ["Use DAX in semantic models","11-03-2026","Power BI"],
+      ["Prepare data for analysis with Power BI","11-03-2026","Power BI"],
+      ["Get started with Microsoft data analytics","11-03-2026","Data analytics"]
+    ],
+    modules:[
+      ["Use AI for everyday tasks","02-08-2026","Copilot and AI",1],
+      ["Work smarter with Microsoft 365 Copilot Chat (Basic)","02-08-2026","Copilot and AI",0],
+      ["Write effective prompts to achieve optimal results","02-08-2026","Copilot and AI",1],
+      ["Get started with Microsoft 365 Copilot Chat (Basic)","02-08-2026","Copilot and AI",1],
+      ["Secure data access in Power BI","11-03-2026","Power BI",0],
+      ["Create dashboards in Power BI","11-03-2026","Power BI",0],
+      ["Choose a content distribution method","11-03-2026","Power BI",0],
+      ["Manage semantic models in Power BI","11-03-2026","Power BI",0],
+      ["Manage workspaces in Power BI service","11-03-2026","Power BI",0],
+      ["Perform analytics in Power BI","11-03-2026","Power BI",0],
+      ["Enhance Power BI report designs for the user experience","11-03-2026","Power BI",0],
+      ["Design Power BI reports","11-03-2026","Power BI",0],
+      ["Scope report design requirements","11-03-2026","Power BI",0],
+      ["Optimize a model for performance in Power BI","11-03-2026","Power BI",0],
+      ["Create visual calculations in Power BI Desktop","11-03-2026","Power BI",0],
+      ["Use DAX time intelligence functions in semantic models","11-03-2026","Power BI",0],
+      ["Modify DAX filter context in semantic models","11-03-2026","Power BI",0],
+      ["Create DAX calculations in semantic models","11-03-2026","Power BI",0],
+      ["Write DAX formulas for semantic models","11-03-2026","Power BI",0],
+      ["Choose a Power BI model framework","11-03-2026","Power BI",0],
+      ["Clean, transform, and load data in Power BI","11-03-2026","Power BI",0],
+      ["Get data in Power BI","11-03-2026","Power BI",0],
+      ["Get started with Copilot in Power BI","11-03-2026","Power BI",0],
+      ["Configure a semantic model","09-03-2026","Power BI",0],
+      ["Introduction to end-to-end analytics using Microsoft Fabric","08-03-2026","Data analytics",1],
+      ["Get started building with Power BI","08-03-2026","Power BI",0],
+      ["Discover data analysis","08-03-2026","Data analytics",0]
+    ],
+    courses:[["Design and manage analytics solutions using Power BI","11-03-2026","Power BI"]]
+  },
+  projects: [
+    {id:"healthcare", title:"Healthcare Insurance Cost Analysis", domain:"Healthcare", tool:"Predictive analytics", kind:"Capstone project", completed:"05-02-2026", cert:"9806705",
+     summary:"Predicting patients' healthcare costs and identifying the factors that drive them, for use by health insurance providers.",
+     problem:"Rising healthcare costs are a significant public health concern. Insurers need to predict future costs and understand their causes to make strategic and tactical decisions.",
+     objective:"Predict patients' healthcare costs, identify the factors contributing to the prediction, and understand how those factors depend on one another.",
+     tasks:["Predict patients' healthcare costs","Identify the factors that contribute to the prediction","Understand how the factors depend on one another","Apply the right tools at each stage of the cost prediction process"]},
+    {id:"region", title:"Comparison of Regions Based on Sales", domain:"Retail", tool:"Tableau", kind:"Course-end project", completed:"02-02-2026", cert:"9787380",
+     summary:"An executive dashboard comparing sales between two regions so management can see the gap and act on it.",
+     problem:"The director of an organisation wanted to compare sales between two regions. Upper management needed a dashboard to understand performance and suggest improvements.",
+     objective:"Create a dashboard that visualises the sales comparison between two selected regions.",
+     tasks:["Use the Sample Superstore dataset as the data source","Group customer name and order ID into folders to organise the data","Create a Location hierarchy for geographic drill-down","Build a dashboard comparing sales between two selected regions"], live:true},
+    {id:"excel", title:"Sales Dashboard in Excel", domain:"Sales", tool:"Excel", kind:"Course-end project", completed:"22-02-2026", cert:"9877270",
+     summary:"An interactive Excel dashboard where users pick a product category and see month-by-month and product-by-product trends.",
+     problem:"A company wanted to give users control over product categories, so they could choose a category and view its trend month by month and product by product.",
+     objective:"Analyse sales by product category and let users explore trends interactively.",
+     tasks:["Analyse sales across product categories","Chart month-by-month and product-by-product trends","Let users pick a product category to filter the view","Format the workbook so the data reads clearly"]},
+    {id:"hr", title:"ScienceQtech Employee Performance Mapping", domain:"Human resources", tool:"SQL", kind:"Course-end project", completed:"02-01-2026", cert:"9110744",
+     summary:"SQL reporting on an employee database to support an annual appraisal cycle: performance, salaries, bonuses and training needs.",
+     problem:"ScienceQtech, a data science start-up, needed reports on employee details, performance and projects ahead of its annual appraisal cycle.",
+     objective:"Use manager ratings to support HR's performance mapping: find maximum salaries, check jobs against the organisation's profile standards, and calculate bonuses to estimate the extra cost.",
+     tasks:["Report on employee details, ratings and projects","Find maximum salaries and check jobs against profile standards","Calculate bonuses to estimate the additional expense","Identify employees who need training"]},
+    {id:"aal", title:"Sales Analysis for AAL", domain:"Retail", tool:"Data analysis", kind:"Course-end project", completed:null, cert:null,
+     summary:"State-by-state analysis of fourth-quarter sales for an Australian clothing brand, to guide expansion and investment decisions.",
+     problem:"AAL, an Australian clothing brand founded in 2000, was seeing a surge in business and planned to expand. The CEO asked the head of sales and marketing for evidence to guide investment.",
+     objective:"Analyse fourth-quarter 2020 sales by state, identify the highest-revenue states and propose sales programmes for lower-revenue states.",
+     tasks:["Analyse the AusApparalSales4thQrt2020 dataset state by state","Identify the states generating the highest revenue","Propose sales programmes for states with lower revenue","Provide insights for next year's decisions"]}
+  ],
+  skills: [
+    {skill:"Python", category:"Programming", evidence:"Data Science with Python; IBM Python for Data Science"},
+    {skill:"SQL", category:"Programming", evidence:"SQL course · ScienceQtech HR project"},
+    {skill:"Programming fundamentals", category:"Programming", evidence:"Programming Essentials · BCA"},
+    {skill:"Data analysis", category:"Analysis", evidence:"Data Analyst Master's programme"},
+    {skill:"Excel analytics", category:"Analysis", evidence:"Business Analytics with Excel"},
+    {skill:"Statistics", category:"Analysis", evidence:"MSc Data Science coursework"},
+    {skill:"Tableau", category:"Visualisation", evidence:"Tableau course · region dashboard project"},
+    {skill:"Dashboard design", category:"Visualisation", evidence:"Excel and Tableau dashboard projects"},
+    {skill:"Power BI", category:"Visualisation", evidence:"6 Power BI learning paths, Microsoft Learn"},
+    {skill:"DAX and semantic models", category:"Visualisation", evidence:"Use DAX in semantic models path"},
+    {skill:"Machine learning", category:"Machine learning", evidence:"ML using Python · project and test passed"},
+    {skill:"Predictive modelling", category:"Machine learning", evidence:"Healthcare cost capstone"},
+    {skill:"Copilot and prompt writing", category:"Machine learning", evidence:"Microsoft Learn Copilot path"},
+    {skill:"Microsoft Fabric fundamentals", category:"Analysis", evidence:"Microsoft Learn module, assessment passed"},
+    {skill:"Institutional reporting", category:"Institutional", evidence:"Data Analyst role, SDUAHER"},
+    {skill:"Coordination", category:"Institutional", evidence:"Top skill on LinkedIn"}
+  ]
+};
+const EMAIL = "navagowdaas@gmail.com";
+
+/* ============================ helpers ============================ */
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const fine = matchMedia("(hover:hover) and (pointer:fine)").matches;
+const lerp = (a,b,t) => a+(b-a)*t;
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("show"),2200)}
+async function copy(text,msg){try{await navigator.clipboard.writeText(text);toast(msg||"Copied to clipboard")}catch{toast("Copying is not available in this browser")}}
+// Sort key for DD-MM-YYYY and MM-YYYY dates
+const ym = v => /^\d{2}-\d{2}-\d{4}$/.test(v||"") ? +(v.slice(6)+v.slice(3,5)+v.slice(0,2)) : /^\d{2}-\d{4}$/.test(v||"") ? +(v.slice(3)+v.slice(0,2)+"00") : v;
+const monthOf = v => (v||"").slice(-7);
+$("#yr").textContent = new Date().getFullYear();
+
+/* ============================ theme ============================ */
+(function(){
+  let t=null; try{t=localStorage.getItem("ng-theme")}catch{}
+  if(t) document.documentElement.dataset.theme=t;
+  $("#themeBtn").onclick=()=>{
+    const cur=document.documentElement.dataset.theme||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");
+    const n=cur==="dark"?"light":"dark";
+    document.documentElement.dataset.theme=n; try{localStorage.setItem("ng-theme",n)}catch{}
+    const tc=document.querySelector('meta[name="theme-color"]'); if(tc) tc.content = n==="dark"?"#06070a":"#f6f6f3";
+  };
+})();
+
+
+/* ============================ split text ============================ */
+$$("[data-split]").forEach(el=>{
+  const walk=n=>{[...n.childNodes].forEach(c=>{
+    if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.append(" ");return}const o=document.createElement("span");o.className="w";const i=document.createElement("span");i.textContent=w;o.append(i);f.append(o)});c.replaceWith(f)}
+    else if(c.nodeType===1&&!c.classList.contains("w")){const o=document.createElement("span");o.className="w";c.replaceWith(o);const i=document.createElement("span");i.append(c);o.append(i)}
+  })};
+  walk(el);
+  $$(".w > span",el).forEach((s,i)=>s.style.transitionDelay=(i*55)+"ms");
+});
+
+/* ============================ reveal observer ============================ */
+/* Content is visible at rest. Only elements below the first screen are
+   pre-hidden for a scroll reveal; the hero headline plays a one-off intro. */
+function observe(){
+  const els=$$(".reveal,.split");
+  const enter=t=>{t.classList.add("in");$$(".count",t).forEach(countUp);if(t.id==="chartCard")drawChart(true);$$("[data-w]",t).forEach(i=>i.style.width=i.dataset.w)};
+  if(reduce||!("IntersectionObserver" in window)){els.forEach(enter);return}
+  document.documentElement.classList.add("js");
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){enter(e.target);io.unobserve(e.target)}}),{threshold:.08,rootMargin:"0px 0px -6% 0px"});
+  els.forEach(el=>{
+    const top=el.getBoundingClientRect().top;
+    if(top<innerHeight){ if(el.matches(".hero .split")){el.classList.add("pre");requestAnimationFrame(()=>requestAnimationFrame(()=>enter(el)))} else enter(el) }
+    else { el.classList.add("pre"); io.observe(el) }
+  });
+}
+function countUp(el){if(el.done)return;el.done=1;const n=+el.dataset.n,t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/1600);el.textContent=Math.round(n*(1-Math.pow(1-p,4)));if(p<1)requestAnimationFrame(f)})(t0)}
+
+/* ============================ cursor + magnetic + spotlight + tilt ============================ */
+if(fine && !reduce){
+  const c=$("#cursor"),d=$("#cursorDot"); let mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+  addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY;d.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`});
+  (function loop(){cx=lerp(cx,mx,.18);cy=lerp(cy,my,.18);c.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;requestAnimationFrame(loop)})();
+  document.addEventListener("pointerover",e=>{
+    const lab=e.target.closest("[data-cursor]"), h=e.target.closest("a,button,textarea,.tl-item .card");
+    c.classList.toggle("label",!!lab); c.textContent=lab?lab.dataset.cursor:"";
+    c.classList.toggle("hover",!lab&&!!h);
+  });
+  $$(".magnetic").forEach(m=>{
+    m.addEventListener("pointermove",e=>{const r=m.getBoundingClientRect();m.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.28}px,${(e.clientY-r.top-r.height/2)*.38}px)`});
+    m.addEventListener("pointerleave",()=>m.style.transform="");
+  });
+}
+document.addEventListener("pointermove",e=>{
+  const s=e.target.closest(".spot"); if(!s) return; const r=s.getBoundingClientRect();
+  s.style.setProperty("--mx",(e.clientX-r.left)+"px"); s.style.setProperty("--my",(e.clientY-r.top)+"px");
+});
+function bindTilt(root=document){ if(!fine||reduce) return;
+  $$(".tilt",root).forEach(c=>{
+    c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg)`});
+    c.addEventListener("pointerleave",()=>c.style.transform="");
+  });
+}
+
+/* ============================ nav ============================ */
+const navA=$$("#navLinks a"), pill=$("#navPill"); let lastY=0;
+function movePill(a){ if(!a){pill.style.opacity=0;return} pill.style.opacity=1; pill.style.left=a.offsetLeft+"px"; pill.style.width=a.offsetWidth+"px"; }
+addEventListener("scroll",()=>{
+  const h=document.documentElement, y=h.scrollTop;
+  $("#progress").style.transform=`scaleX(${y/(h.scrollHeight-h.clientHeight)})`;
+  $("#nav").classList.toggle("hide", y>lastY && y>400 && !$("#mobileMenu").classList.contains("open")); lastY=y;
+  let cur=null; $$("main section[id]").forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.4) cur=s.id});
+  navA.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+cur));
+  movePill(navA.find(a=>a.classList.contains("active")));
+  timelineProgress();
+},{passive:true});
+const MM=$("#mobileMenu");
+MM.innerHTML=navA.map((a,i)=>`<a href="${a.getAttribute("href")}"><span>0${i+1}</span>${a.textContent}</a>`).join("");
+$("#menuBtn").onclick=()=>{const o=MM.classList.toggle("open");MM.setAttribute("aria-hidden",!o);document.body.style.overflow=o?"hidden":""};
+$$("a",MM).forEach(a=>a.onclick=()=>{MM.classList.remove("open");document.body.style.overflow=""});
+
+/* ============================ clocks ============================ */
+function tick(){
+  const f=new Intl.DateTimeFormat("en-IN",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Asia/Kolkata"}).format(new Date());
+  $("#clock").innerHTML=`${f}<small>IST</small>`; $("#heroClock").textContent=`Bengaluru — ${f} IST`;
+}
+tick(); setInterval(tick,15000);
+
+/* ============================ marquee ============================ */
+(function(){const w=["Python","SQL","Tableau","Power BI","Machine Learning","Data Visualisation","Statistics","Excel","DAX","Microsoft Fabric","Institutional Reporting","Data Cleaning"];
+  const one=w.map(x=>`<span>${x}</span>`).join(""); $("#marquee").innerHTML=one+one;})();
+
+/* ============================ 3D sphere ============================ */
+(function(){
+  const wrap=$("#sphereWrap"), cv=$("#sphere"), ctx=cv.getContext("2d");
+  const LABELS=["Python","SQL","Tableau","Power BI","Machine Learning","Statistics","Excel","DAX","Reporting","Dashboards"];
+  const N=520, pts=[]; const ga=Math.PI*(3-Math.sqrt(5));
+  for(let i=0;i<N;i++){const y=1-(i/(N-1))*2, r=Math.sqrt(1-y*y), t=ga*i; pts.push([Math.cos(t)*r,y,Math.sin(t)*r])}
+  const tags=LABELS.map((l,i)=>{const el=document.createElement("span");el.className="tag3d";el.textContent=l;wrap.append(el);return {el,p:pts[Math.floor((i+.5)*N/LABELS.length)]}});
+  const links=[]; for(let i=0;i<N;i+=3){let best=-1,bd=9;for(let j=0;j<N;j++){if(j===i)continue;const d=(pts[i][0]-pts[j][0])**2+(pts[i][1]-pts[j][1])**2+(pts[i][2]-pts[j][2])**2;if(d<bd){bd=d;best=j}}links.push([i,best])}
+  let W,H,R,dpr; function size(){dpr=Math.min(2,devicePixelRatio||1);W=wrap.clientWidth;H=wrap.clientHeight;cv.width=W*dpr;cv.height=H*dpr;R=Math.min(W,H)*.36}
+  size(); addEventListener("resize",size);
+  let ay=0,ax=-.35,vy=.0035,vx=0,drag=null,px=0,py=0,visible=true;
+  wrap.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY};wrap.setPointerCapture(e.pointerId)});
+  wrap.addEventListener("pointermove",e=>{const r=wrap.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5;
+    if(drag){vy=(e.clientX-drag.x)*.0009;vx=(e.clientY-drag.y)*.0009;drag={x:e.clientX,y:e.clientY}}});
+  wrap.addEventListener("pointerup",()=>drag=null); wrap.addEventListener("pointerleave",()=>{px=py=0});
+  new IntersectionObserver(([e])=>visible=e.isIntersecting).observe(wrap);
+  function proj(p){
+    let [x,y,z]=p; const cy=Math.cos(ay),sy=Math.sin(ay),cx=Math.cos(ax),sx=Math.sin(ax);
+    let x1=x*cy-z*sy, z1=x*sy+z*cy; let y1=y*cx-z1*sx, z2=y*sx+z1*cx;
+    const s=2.6/(2.6+z2); return [W/2+x1*R*s+px*30, H/2+y1*R*s+py*30, z2, s];
+  }
+  function frame(){
+    requestAnimationFrame(frame); if(!visible) return;
+    if(!drag){vy=lerp(vy,.0035,.02);vx=lerp(vx,0,.04)}
+    ay+=reduce?0:vy; ax=Math.max(-1.2,Math.min(1.2,ax+vx));
+    const st=getComputedStyle(document.documentElement), c1=st.getPropertyValue("--c1").trim(), c2=st.getPropertyValue("--c2").trim();
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
+    const P=pts.map(proj);
+    ctx.lineWidth=.6; ctx.strokeStyle=c2;
+    for(const [a,b] of links){const A=P[a],B=P[b]; const al=Math.max(0,(1-(A[2]+B[2])/2)/2)*.35; if(al<.02)continue; ctx.globalAlpha=al; ctx.beginPath();ctx.moveTo(A[0],A[1]);ctx.lineTo(B[0],B[1]);ctx.stroke()}
+    for(let i=0;i<N;i++){const p=P[i]; const depth=(1-p[2])/2; ctx.globalAlpha=.15+depth*.85; ctx.fillStyle=i%7===0?c2:c1; ctx.beginPath(); ctx.arc(p[0],p[1],(.6+depth*1.6)*p[3],0,6.283); ctx.fill()}
+    ctx.globalAlpha=1;
+    // equator ring
+    ctx.strokeStyle=c1; ctx.globalAlpha=.18; ctx.beginPath();
+    for(let k=0;k<=64;k++){const t=k/64*6.283; const q=proj([Math.cos(t)*1.18,0,Math.sin(t)*1.18]); k?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])} ctx.stroke(); ctx.globalAlpha=1;
+    for(const t of tags){const q=proj(t.p.map(v=>v*1.08)); const front=(1-q[2])/2; t.el.style.transform=`translate(${q[0]}px,${q[1]}px) translate(-50%,-50%) scale(${.75+front*.35})`; t.el.style.opacity=Math.max(0,front*1.4-.35); t.el.style.zIndex=Math.round(front*10)}
+  }
+  frame();
+})();
+
+/* ============================ journey ============================ */
+const J=[
+  {k:"work",title:"Data Analyst",org:"Sri Devaraj Urs Academy of Higher Education and Research, Karnataka",when:"04-2026 — Present",tags:["Full-time","On-site","Current"],
+   body:"Working on institutional data analytics, supporting data-driven decision-making across the institution.",
+   pts:["Data collection from academic and administrative sources","Analysis and reporting for institutional requirements","Visualisation of findings for decision-makers"]},
+  {k:"edu",title:"MSc, Data Science",org:"Karnataka State Open University",when:"09-2025 — Present",tags:["Pursuing"],
+   body:"Focus on Python, statistics, data analysis and machine learning fundamentals, building skills through coursework, hands-on practice and academic projects.",
+   pts:["Activities: academic projects, data science workshops, online learning and collaborative study groups"]},
+  {k:"edu",title:"Data Analyst Master's Programme",org:"Simplilearn",when:"18-02-2026",tags:["With distinction"],
+   body:"Graduated having completed all mandated course requirements and industry projects with distinction.",
+   pts:[]},
+  {k:"edu",title:"Data Scientist Master's Programme",org:"Simplilearn",when:"10-12-2025",tags:["With distinction"],
+   body:"Graduated having completed all mandated course requirements and industry projects with distinction.",
+   pts:[]},
+  {k:"edu",title:"Professional Certificate, Data Science and Data Analytics",org:"Simplilearn",when:"07-2025",tags:["Completed"],
+   body:"Structured professional programme in data science and data analytics.",pts:[]},
+  {k:"edu",title:"BCA, Computer Applications",org:"Bangalore North University",when:"07-2022 — 08-2025",tags:["Completed"],
+   body:"Bachelor of Computer Applications with a focus on programming and databases.",
+   pts:["Activities: programming clubs, coding workshops, academic projects and online tech communities"]}
+];
+$("#tl").insertAdjacentHTML("beforeend",J.map((j,i)=>`
+  <div class="tl-item reveal ${i===0?"open":""}" data-k="${j.k}">
+    <span class="tl-node"></span>
+    <div class="card spot" tabindex="0" role="button" aria-expanded="${i===0}">
+      <span class="tl-plus" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" stroke="currentColor" stroke-width="1.5"><path d="M6 1v10M1 6h10"/></svg></span>
+      <div class="tl-head"><h3>${esc(j.title)}</h3><span class="tl-when">${esc(j.when)}</span></div>
+      <div class="tl-org">${esc(j.org)}</div>
+      <div>${j.tags.map(t=>`<span class="pill ${t==="Current"||t==="Pursuing"?"now":t==="With distinction"?"dist":""}">${t==="Current"||t==="Pursuing"?'<span class="live" style="width:6px;height:6px"></span>':""}${esc(t)}</span>`).join("")}</div>
+      <div class="tl-more"><div><p>${esc(j.body)}</p>${j.pts.length?`<ul>${j.pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>`:""}</div></div>
+    </div>
+  </div>`).join(""));
+$("#jFilter").innerHTML=[["all","Everything",J.length],["work","Work",J.filter(j=>j.k==="work").length],["edu","Education",J.filter(j=>j.k==="edu").length]]
+  .map(([f,l,n],i)=>`<button aria-pressed="${i===0}" data-f="${f}">${l} <span>${String(n).padStart(2,"0")}</span></button>`).join("");
+$$(".tl-item .card").forEach(c=>{const t=()=>{const it=c.parentElement;it.classList.toggle("open");c.setAttribute("aria-expanded",it.classList.contains("open"));setTimeout(timelineProgress,650)};
+  c.onclick=t; c.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();t()}}});
+$$("#jFilter button").forEach(b=>b.onclick=()=>{
+  $$("#jFilter button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  $$(".tl-item").forEach(it=>it.classList.toggle("off",b.dataset.f!=="all"&&it.dataset.k!==b.dataset.f)); timelineProgress();
+});
+function timelineProgress(){
+  const tl=$("#tl"); const r=tl.getBoundingClientRect(); const p=Math.max(0,Math.min(1,(innerHeight*.6-r.top)/r.height));
+  $("#tlFill").style.transform=`scaleY(${p})`;
+  $$(".tl-item",tl).forEach(it=>it.classList.toggle("lit",it.getBoundingClientRect().top<innerHeight*.6));
+}
+
+/* ============================ workflow ============================ */
+const STEPS=[
+  {t:"Collect",d:"Gather records from academic, administrative and survey sources into one structured dataset.",tools:["SQL","Excel","Forms"]},
+  {t:"Clean",d:"Resolve missing values, duplicates and inconsistent formats before any number is reported.",tools:["Python","Pandas"]},
+  {t:"Analyse",d:"Explore patterns, test relationships and apply statistical and machine learning methods.",tools:["Python","Statistics","Machine learning"]},
+  {t:"Visualise",d:"Build clear charts and dashboards that answer one question each.",tools:["Tableau","Power BI"]},
+  {t:"Report",d:"Turn findings into clear institutional reports that support decisions.",tools:["Reporting","Excel"]}
+];
+let stepI=0, stepTimer=null, stepAuto=true;
+$("#steps").innerHTML=STEPS.map((s,i)=>`<button class="step" role="tab" aria-selected="${i===0}" data-i="${i}"><span class="k">0${i+1}</span><span><h3>${s.t}</h3><p>${s.d}</p></span><span class="bar"><i></i></span></button>`).join("");
+$$(".step").forEach(b=>b.onclick=()=>{stepAuto=false;setStep(+b.dataset.i)});
+function setStep(i){
+  stepI=i; $$(".step").forEach((b,k)=>{b.setAttribute("aria-selected",k===i);const bar=$(".bar i",b);bar.style.transition="none";bar.style.width="0"});
+  const bar=$$(".step")[i].querySelector(".bar i"); void bar.offsetWidth;
+  if(stepAuto&&!reduce){bar.style.transition="width 5s linear";bar.style.width="100%"} else bar.style.width="100%";
+  $("#vizLabel").textContent=`Stage 0${i+1} · ${STEPS[i].t}`;
+  $("#vizTools").innerHTML=STEPS[i].tools.map(t=>`<span class="pill" style="margin:0">${t}</span>`).join("");
+  $("#vizSvg").innerHTML=VIZ[i]();
+  clearTimeout(stepTimer); if(stepAuto&&!reduce) stepTimer=setTimeout(()=>setStep((i+1)%STEPS.length),5000);
+}
+const A=(d)=>`style="animation-delay:${d}ms"`;
+const VIZ=[
+  ()=>{let s=`<style>.f{opacity:0;animation:fin .5s var(--ease) forwards}@keyframes fin{from{opacity:0;transform:translateX(-30px)}to{opacity:1}}</style>`;
+    const src=["Admissions","Research","Faculty","Surveys"];
+    src.forEach((n,i)=>{s+=`<g class="f" ${A(i*120)}><rect x="10" y="${30+i*62}" width="120" height="42" rx="10" fill="var(--surface-2)" stroke="var(--line-2)"/><text x="70" y="${56+i*62}" text-anchor="middle" fill="var(--text)" font-size="13" font-family="Geist">${n}</text></g>
+      <path d="M130 ${51+i*62} C 220 ${51+i*62}, 230 150, 320 150" stroke="url(#g)" stroke-width="1.5" fill="none" stroke-dasharray="4 6"><animate attributeName="stroke-dashoffset" from="40" to="0" dur="1s" repeatCount="indefinite"/></path>`});
+    s+=`<defs><linearGradient id="g"><stop offset="0" stop-color="var(--c1)"/><stop offset="1" stop-color="var(--c2)"/></linearGradient></defs>
+      <g class="f" ${A(600)}><rect x="320" y="100" width="150" height="100" rx="14" fill="var(--surface-2)" stroke="var(--c1)"/>`;
+    for(let r=0;r<4;r++)for(let c=0;c<5;c++) s+=`<rect class="f" ${A(800+(r*5+c)*50)} x="${334+c*25}" y="${116+r*18}" width="20" height="10" rx="3" fill="var(--c1)" opacity=".6"/>`;
+    return s+`</g><text x="395" y="222" text-anchor="middle" fill="var(--muted)" font-size="11" font-family="Geist Mono">dataset.csv</text>`},
+  ()=>{let s=`<style>.bad{animation:fix 3s var(--ease) forwards}@keyframes fix{0%,40%{fill:var(--err)}100%{fill:var(--ok)}}</style>`;
+    const H=["id","year","dept","count"]; H.forEach((h,c)=>s+=`<text x="${40+c*110}" y="40" fill="var(--muted)" font-size="12" font-family="Geist Mono">${h}</text>`);
+    const rows=[["001","2024","CSE","42"],["002","—","MED","38"],["003","2024","med ","N/A"],["003","2024","MED","51"],["004","2025","BIO","29"],["005","2025","CSE","47"]];
+    const fixed=[[1,1,"2024"],[2,2,"MED"],[2,3,"51"]];
+    rows.forEach((r,i)=>{const y=74+i*36; const dup=i===3; s+=`<rect x="24" y="${y-22}" width="440" height="30" rx="8" fill="var(--surface)" ${dup?`opacity="1"><animate attributeName="opacity" begin="1.4s" dur=".6s" to=".15" fill="freeze"/></rect`:"/"}>`;
+      r.forEach((v,c)=>{const f=fixed.find(x=>x[0]===i&&x[1]===c); s+= f?`<text x="${40+c*110}" y="${y}" font-size="13" font-family="Geist Mono" class="bad">${v}<animate attributeName="opacity" begin="1.2s" dur=".01s" to="0" fill="freeze"/></text><text x="${40+c*110}" y="${y}" font-size="13" font-family="Geist Mono" fill="var(--ok)" opacity="0">${f[2]}<animate attributeName="opacity" begin="1.2s" dur=".4s" to="1" fill="freeze"/></text>`
+        :`<text x="${40+c*110}" y="${y}" fill="var(--text)" font-size="13" font-family="Geist Mono" ${dup?'class="bad"':""}>${v}</text>`});});
+    return s+`<text x="24" y="292" fill="var(--muted)" font-size="11" font-family="Geist Mono">missing → imputed · formats normalised · duplicate removed</text>`},
+  ()=>{let s=`<line x1="40" y1="260" x2="460" y2="260" stroke="var(--line-2)"/><line x1="40" y1="20" x2="40" y2="260" stroke="var(--line-2)"/>`;
+    let seed=7; const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    for(let i=0;i<46;i++){const x=50+rnd()*400,y=250-(x-50)*.48-(rnd()-.5)*80; s+=`<circle cx="${x}" cy="${Math.max(30,Math.min(252,y))}" r="0" fill="${i%5?"var(--c1)":"var(--c2)"}" opacity=".8"><animate attributeName="r" begin="${i*25}ms" dur=".4s" to="4" fill="freeze"/></circle>`}
+    return s+`<line x1="50" y1="248" x2="450" y2="56" stroke="var(--c3)" stroke-width="2" stroke-dasharray="460" stroke-dashoffset="460"><animate attributeName="stroke-dashoffset" begin="1.3s" dur="1s" to="0" fill="freeze"/></line><text x="456" y="48" text-anchor="end" fill="var(--c3)" font-size="12" font-family="Geist Mono">trend</text>`},
+  ()=>{const v=[38,62,48,80,70,94,86]; let s=`<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--c1)"/><stop offset="1" stop-color="var(--c2)" stop-opacity=".3"/></linearGradient></defs>`;
+    v.forEach((h,i)=>{const H=h*2.3,x=40+i*62; s+=`<rect x="${x}" y="260" width="40" height="0" rx="6" fill="url(#bg)"><animate attributeName="height" begin="${i*90}ms" dur=".9s" to="${H}" fill="freeze" calcMode="spline" keySplines=".16 1 .3 1"/><animate attributeName="y" begin="${i*90}ms" dur=".9s" to="${260-H}" fill="freeze" calcMode="spline" keySplines=".16 1 .3 1"/></rect>`});
+    return s+`<line x1="30" y1="260" x2="470" y2="260" stroke="var(--line-2)"/>`},
+  ()=>{const K=[["Report status","Ready"],["Audience","Leadership"],["Format","Dashboard"]]; let s="";
+    K.forEach((k,i)=>{s+=`<g opacity="0"><animate attributeName="opacity" begin="${i*200}ms" dur=".5s" to="1" fill="freeze"/><rect x="${20+i*152}" y="40" width="140" height="96" rx="14" fill="var(--surface-2)" stroke="var(--line-2)"/><text x="${34+i*152}" y="70" fill="var(--muted)" font-size="11" font-family="Geist Mono">${k[0]}</text><text x="${34+i*152}" y="112" fill="var(--text)" font-size="26" font-family="Geist" letter-spacing="-1">${k[1]}</text></g>`});
+    s+=`<g opacity="0"><animate attributeName="opacity" begin=".7s" dur=".5s" to="1" fill="freeze"/><rect x="20" y="156" width="444" height="110" rx="14" fill="var(--surface)" stroke="var(--line)"/>`;
+    [0,1,2,3].forEach(i=>s+=`<rect x="40" y="${176+i*20}" width="0" height="8" rx="4" fill="${i?"var(--line-2)":"var(--c1)"}"><animate attributeName="width" begin="${900+i*150}ms" dur=".8s" to="${[300,380,340,220][i]}" fill="freeze"/></rect>`);
+    return s+`</g>`}
+];
+setStep(0);
+
+/* ============================ SQL engine ============================ */
+const SCHEMA={
+  experience:DATA.experience,
+  education:DATA.education,
+  certifications:DATA.certifications.map(({title,issuer,issued,type,credential_id,verify})=>({title,issuer,issued,type,credential_id,verification:verify?"Simplilearn link":null})),
+  projects:DATA.projects.map(({title,tool,domain,kind,completed})=>({title,tool,domain,kind,completed})),
+  microsoft_learn:[...DATA.mslearn.paths.map(x=>({title:x[0],kind:"Learning path",topic:x[2],completed:x[1],assessment:null})),
+    ...DATA.mslearn.courses.map(x=>({title:x[0],kind:"Course",topic:x[2],completed:x[1],assessment:null})),
+    ...DATA.mslearn.modules.map(x=>({title:x[0],kind:"Module",topic:x[2],completed:x[1],assessment:x[3]?"Passed":null}))],
+  skills:DATA.skills
+};
+function runSQL(src){
+  const q=src.trim().replace(/;\s*$/,"").replace(/\s+/g," ");
+  if(!q) throw Error("Type a query first.");
+  if(/^show tables$/i.test(q)) return {cols:["table_name","row_count"],rows:Object.entries(SCHEMA).map(([k,v])=>({table_name:k,row_count:v.length}))};
+  let m=q.match(/^(?:describe|desc) (\w+)$/i);
+  if(m){const t=SCHEMA[m[1].toLowerCase()]; if(!t) throw Error(`Table '${m[1]}' does not exist. Try SHOW TABLES.`);
+    return {cols:["column","example"],rows:Object.keys(t[0]).map(c=>({column:c,example:t.find(r=>r[c]!=null)?.[c]??null}))}}
+  m=q.match(/^select (.+?) from (\w+)(?: where (.+?))?(?: order by (\w+)(?: (asc|desc))?)?(?: limit (\d+))?$/i);
+  if(!m) throw Error("Syntax not recognised. Expected: SELECT cols FROM table [WHERE …] [ORDER BY col [DESC]] [LIMIT n]");
+  const [,colStr,tn,where,ob,dir,lim]=m; const table=SCHEMA[tn.toLowerCase()];
+  if(!table) throw Error(`Table '${tn}' does not exist. Available: ${Object.keys(SCHEMA).join(", ")}`);
+  const allCols=Object.keys(table[0]);
+  const chk=c=>{if(!allCols.includes(c)) throw Error(`Unknown column '${c}' in ${tn}. Columns: ${allCols.join(", ")}`)};
+  let rows=table.slice();
+  if(where){
+    const conds=where.split(/ and /i).map(c=>{const x=c.match(/^(\w+) ?(=|!=|<>|>=|<=|>|<| like | is not | is )(.+)$/i); if(!x) throw Error(`Cannot parse condition '${c}'`);
+      chk(x[1]); return {c:x[1],op:x[2].trim().toLowerCase(),v:x[3].trim().replace(/^['"]|['"]$/g,"")}});
+    rows=rows.filter(r=>conds.every(({c,op,v})=>{const a=r[c];
+      if(op==="is") return v.toLowerCase()==="null"?a==null:String(a)===v;
+      if(op==="is not") return v.toLowerCase()==="null"?a!=null:String(a)!==v;
+      if(op==="like") return new RegExp("^"+v.replace(/[.*+?^${}()|[\]\\]/g,"\\$&").replace(/%/g,".*").replace(/_/g,".")+"$","i").test(a??"");
+      const A=ym(a),B=ym(v); const num=!isNaN(+A)&&!isNaN(+B)&&a!=null;
+      const x=num?+A:String(a??"").toLowerCase(), y=num?+B:String(v).toLowerCase();
+      return {"=":x===y,"!=":x!==y,"<>":x!==y,">":x>y,"<":x<y,">=":x>=y,"<=":x<=y}[op];}));
+  }
+  if(ob){chk(ob); const d=(dir||"asc").toLowerCase()==="desc"?-1:1;
+    rows.sort((a,b)=>{const x=ym(a[ob]),y=ym(b[ob]); if(x==null)return 1; if(y==null)return -1; return (x>y?1:x<y?-1:0)*d})}
+  if(lim) rows=rows.slice(0,+lim);
+  if(/^count\(\*\)$/i.test(colStr.trim())) return {cols:["count"],rows:[{count:rows.length}]};
+  const cols=colStr.trim()==="*"?allCols:colStr.split(",").map(s=>s.trim());
+  cols.forEach(chk);
+  return {cols,rows:rows.map(r=>Object.fromEntries(cols.map(c=>[c,r[c]])))};
+}
+const SAMPLES=[
+  ["Latest credentials","SELECT title, issuer, issued FROM certifications ORDER BY issued DESC LIMIT 5;"],
+  ["Education","SELECT programme, institution, start, end FROM education;"],
+  ["Visualisation skills","SELECT skill, evidence FROM skills WHERE category = 'Visualisation';"],
+  ["Distinctions","SELECT title, issued FROM certifications WHERE type LIKE '%distinction%';"],
+  ["Projects","SELECT title, tool, domain, completed FROM projects ORDER BY completed DESC;"],
+  ["Power BI paths","SELECT title, completed FROM microsoft_learn WHERE kind = 'Learning path' AND topic = 'Power BI';"],
+  ["Count by issuer","SELECT COUNT(*) FROM certifications WHERE issuer = 'Simplilearn';"],
+  ["Python anything","SELECT * FROM certifications WHERE title LIKE '%python%';"],
+  ["Current role","SELECT role, organisation, start FROM experience WHERE end IS NULL;"],
+  ["Show tables","SHOW TABLES;"]
+];
+$("#cChips").innerHTML=SAMPLES.map((s,i)=>`<button data-i="${i}">${s[0]}</button>`).join("");
+$$("#cChips button").forEach(b=>b.onclick=()=>{typeQuery(SAMPLES[b.dataset.i][1])});
+$("#cSide").insertAdjacentHTML("beforeend",Object.entries(SCHEMA).map(([k,v])=>`<div class="tbl"><button data-t="${k}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg>${k}<span style="margin-left:auto;color:var(--faint)">${v.length}</span></button><div class="cols">${Object.keys(v[0]).join("<br>")}</div></div>`).join(""));
+$$("#cSide button").forEach(b=>b.onclick=()=>typeQuery(`SELECT * FROM ${b.dataset.t};`));
+const TA=$("#sql");
+function highlight(){
+  const v=TA.value; $("#gut").innerHTML=v.split("\n").map((_,i)=>i+1).join("<br>");
+  $("#hl").innerHTML=esc(v).replace(/('[^']*'?)|(\b\d+\b)|\b(SELECT|FROM|WHERE|AND|ORDER|BY|LIMIT|ASC|DESC|LIKE|IS|NOT|NULL|SHOW|TABLES|DESCRIBE)\b|\b(COUNT)\b/gi,(m,s,n,k,f)=>s?`<span class="tok-s">${s}</span>`:n?`<span class="tok-n">${n}</span>`:k?`<span class="tok-k">${k}</span>`:`<span class="tok-f">${f}</span>`)+"\n";
+}
+TA.addEventListener("input",highlight);
+TA.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key==="Enter"){e.preventDefault();execute()}});
+$("#runBtn").onclick=execute;
+let typing=null;
+function typeQuery(q){
+  clearInterval(typing); if(reduce){TA.value=q;highlight();execute();return}
+  let i=0; TA.value=""; typing=setInterval(()=>{TA.value=q.slice(0,i+=2);highlight();if(i>=q.length){clearInterval(typing);TA.value=q;highlight();execute()}},14);
+}
+function execute(){
+  const t0=performance.now(); const out=$("#result");
+  try{
+    const {cols,rows}=runSQL(TA.value); const ms=(performance.now()-t0).toFixed(2);
+    $("#cStatus").textContent=`${rows.length} row${rows.length===1?"":"s"} · ${ms} ms`;
+    out.innerHTML=rows.length?`<table><thead><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows.map((r,i)=>`<tr style="animation-delay:${i*40}ms">${cols.map(c=>`<td>${r[c]==null?'<span class="null">NULL</span>':esc(r[c])}</td>`).join("")}</tr>`).join("")}</tbody></table>`:`<div class="msg">Query returned 0 rows.</div>`;
+  }catch(err){$("#cStatus").textContent="error";out.innerHTML=`<div class="msg err">✕ ${esc(err.message)}</div>`}
+}
+TA.value=SAMPLES[0][1]; highlight(); execute();
+
+/* ============================ certifications ============================ */
+const ISS={"Simplilearn":"SL","IBM":"IBM","Microsoft Learn":"MS"};
+const dist=c=>/distinction/.test(c.type);
+const certs=[...DATA.certifications].sort((a,b)=>(dist(b)-dist(a))||(!!b.img-!!a.img)||(ym(b.issued)-ym(a.issued)));
+const issuers=["All",...new Set(certs.map(c=>c.issuer))];
+$("#certFilters").innerHTML=issuers.map((s,i)=>`<button aria-pressed="${i===0}" data-s="${esc(s)}">${esc(s)} <span class="mono" style="opacity:.6;margin-left:4px">${s==="All"?certs.length:certs.filter(c=>c.issuer===s).length}</span></button>`).join("");
+$("#certGrid").innerHTML=certs.map(c=>`
+  <article class="card spot cert reveal ${/distinction/.test(c.type)?"feature":""}" data-s="${esc(c.issuer)}">
+    ${c.img?`<button class="thumb ${c.tall?"tall":""}" data-view="${esc(c.credential_id)}" aria-label="View certificate: ${esc(c.title)}"><img src="${esc(c.img)}" alt="" loading="lazy"></button>`:""}
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><span class="logo">${ISS[c.issuer]||"•"}</span><span class="pill ${dist(c)?"dist":""}" style="margin:0">${dist(c)?"Master's · with distinction":esc(c.type.replace(" · project and test passed"," · project + test").replace(" · project passed"," · project"))}</span></div>
+    <h3>${esc(c.title)}</h3>
+    <div class="meta">${esc(c.issuer)} · Issued ${esc(c.issued)}</div>
+    <div class="cid">${c.credential_id?`<span>ID ${esc(c.credential_id)}</span>`:c.link?`<span>Public transcript</span>`:`<span>Shared on LinkedIn</span>`}
+      <span class="cert-actions">${c.verify?`<a class="copy" href="${esc(c.verify)}" target="_blank" rel="noopener">Verify ↗</a>`:""}${c.img?`<button class="copy" data-view="${esc(c.credential_id)}">View</button>`:""}${c.credential_id?`<button class="copy" data-c="${esc(c.credential_id)}">Copy ID</button>`:c.link?`<a class="copy" href="${esc(c.link)}" target="_blank" rel="noopener">Microsoft Learn ↗</a>`:`<a class="copy" href="https://www.linkedin.com/in/nava-gowda-a-s-0970102b2/details/certifications/" target="_blank" rel="noopener">LinkedIn ↗</a>`}</span></div>
+  </article>`).join("");
+$$("#certGrid [data-view]").forEach(b=>b.onclick=()=>openCert(b.dataset.view));
+$$("#certGrid .copy[data-c]").forEach(b=>b.onclick=()=>copy(b.dataset.c,"Credential ID copied"));
+$$("#certFilters button").forEach(b=>b.onclick=()=>{
+  $$("#certFilters button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  $$(".cert").forEach(c=>c.classList.toggle("hide",b.dataset.s!=="All"&&c.dataset.s!==b.dataset.s));
+});
+$("#issuers").innerHTML=issuers.slice(1).map(s=>{const n=certs.filter(c=>c.issuer===s).length;return `<div class="issuer-row"><div class="top"><span>${esc(s)}</span><span>${n} of ${certs.length}</span></div><div class="track"><i data-w="${n/certs.length*100}%"></i></div></div>`}).join("")
+  + `<p style="color:var(--faint);font-size:.8rem;margin:6px 0 0">Nine certificates are shown from the original PDFs. The IBM course and Python 101 are listed as shown on LinkedIn. The Microsoft Learn course links to the public transcript.</p>`;
+
+function drawChart(animate){
+  const svg=$("#certChart"), W=svg.clientWidth||520, H=220, pad={l:28,r:12,t:16,b:30};
+  const keys=certs.map(c=>monthOf(c.issued)).sort((p,q)=>ym(p)-ym(q)); const months=[];
+  for(let [m,y]=keys[0].split("-").map(Number);;){const k=String(m).padStart(2,"0")+"-"+y;months.push(k);if(k===keys[keys.length-1])break;if(++m>12){m=1;y++}}
+  const per=months.map(m=>certs.filter(c=>monthOf(c.issued)===m)); let cum=0; const pts=per.map(a=>cum+=a.length);
+  const max=Math.max(...pts), x=i=>pad.l+i*(W-pad.l-pad.r)/(months.length-1), y=v=>H-pad.b-v/max*(H-pad.t-pad.b);
+  const line=pts.map((v,i)=>`${i?"L":"M"}${x(i)},${y(v)}`).join(""), area=line+`L${x(months.length-1)},${H-pad.b}L${x(0)},${H-pad.b}Z`;
+  let s=`<defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--c1)" stop-opacity=".35"/><stop offset="1" stop-color="var(--c1)" stop-opacity="0"/></linearGradient><linearGradient id="ln"><stop offset="0" stop-color="var(--c1)"/><stop offset="1" stop-color="var(--c3)"/></linearGradient></defs>`;
+  [0,.5,1].forEach(f=>{const v=Math.round(max*f);s+=`<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${pad.l-8}" y="${y(v)+4}" text-anchor="end" fill="var(--faint)" font-size="10" font-family="Geist Mono">${v}</text>`});
+  per.forEach((a,i)=>{const bh=a.length/max*(H-pad.t-pad.b); s+=`<rect x="${x(i)-9}" y="${H-pad.b-bh}" width="18" height="${bh}" rx="4" fill="var(--c2)" opacity=".28"/>`});
+  s+=`<path d="${area}" fill="url(#ar)" opacity="${animate?0:1}">${animate?'<animate attributeName="opacity" begin=".9s" dur=".8s" to="1" fill="freeze"/>':""}</path>`;
+  s+=`<path d="${line}" fill="none" stroke="url(#ln)" stroke-width="2.5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${animate?1:0}">${animate?'<animate attributeName="stroke-dashoffset" dur="1.4s" to="0" fill="freeze" calcMode="spline" keySplines=".16 1 .3 1"/>':""}</path>`;
+  months.forEach((m,i)=>{s+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" fill="var(--faint)" font-size="10" font-family="Geist Mono">${m}</text><circle cx="${x(i)}" cy="${y(pts[i])}" r="4.5" fill="var(--bg)" stroke="var(--c1)" stroke-width="2"/><rect class="hit" data-i="${i}" x="${x(i)-22}" y="${pad.t}" width="44" height="${H-pad.t-pad.b}" fill="transparent"/>`});
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`); svg.innerHTML=s;
+  const tip=$("#chartTip"), card=$("#chartCard");
+  $$(".hit",svg).forEach(h=>{
+    h.onpointerenter=()=>{const i=+h.dataset.i;tip.innerHTML=`<div class="mono" style="color:var(--muted);font-size:.7rem">${months[i]} · total ${pts[i]}</div>${per[i].length?per[i].map(c=>`<div style="margin-top:4px">${esc(c.title)}</div>`).join(""):'<div style="margin-top:4px;color:var(--muted)">No new credentials</div>'}`;
+      const sr=svg.getBoundingClientRect(), cr=card.getBoundingClientRect(); tip.style.left=Math.min(cr.width-270,Math.max(10,sr.left-cr.left+x(i)*sr.width/W-60))+"px"; tip.style.top=(sr.top-cr.top+y(pts[i])*sr.height/H-20-tip.offsetHeight)+"px"; tip.style.opacity=1};
+    h.onpointerleave=()=>tip.style.opacity=0;
+  });
+}
+drawChart(false); addEventListener("resize",()=>drawChart(false));
+
+/* ============================ skills ============================ */
+const ICON={Programming:'<path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/>',Analysis:'<path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/>',Visualisation:'<rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/>',"Machine learning":'<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/>',Institutional:'<path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-7 10 7"/>'};
+const groups=[...new Set(DATA.skills.map(s=>s.category))];
+$("#skillGrid").innerHTML=groups.map((g,i)=>`<div class="card spot skill-card reveal" ${i===groups.length-1&&groups.length%2?'style="grid-column:1/-1"':""}><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICON[g]||""}</svg></div><h3>${g}</h3>${DATA.skills.filter(s=>s.category===g).map(s=>`<div class="skill-row"><span>${esc(s.skill)}</span><span class="ev">${esc(s.evidence)}</span></div>`).join("")}</div>`).join("");
+
+
+/* ============================ modal (certificates + projects) ============================ */
+const MODAL=$("#modal"), MBOX=$("#mBox"); let lastFocus=null;
+function openModal(html){
+  lastFocus=document.activeElement; MBOX.innerHTML=`<button class="m-close" id="mClose" aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14" stroke="currentColor" stroke-width="1.6"><path d="M2 2l10 10M12 2 2 12"/></svg></button>`+html;
+  MODAL.classList.add("open"); document.body.style.overflow="hidden"; MBOX.scrollTop=0;
+  $("#mClose").onclick=closeModal; setTimeout(()=>$("#mClose").focus(),30);
+}
+function closeModal(){ if(!MODAL.classList.contains("open")) return; MODAL.classList.remove("open"); document.body.style.overflow=""; lastFocus?.focus?.(); }
+MODAL.addEventListener("click",e=>{if(e.target===MODAL)closeModal()});
+const certImgs=()=>certs.filter(c=>c.img);
+function openCert(id){
+  const list=certImgs(), i=list.findIndex(c=>c.credential_id===id); if(i<0) return; const c=list[i];
+  const proj=DATA.projects.find(p=>p.cert===c.credential_id);
+  openModal(`<div class="m-img"><img src="${esc(c.img)}" alt="Certificate: ${esc(c.title)}, issued to Nava Gowda A S"></div>
+    <div class="m-body"><span class="label">${esc(c.issuer)} · ${esc(c.type)}</span><h3 id="mTitle">${esc(c.title)}</h3>
+    <div class="meta">Issued ${esc(c.issued)} · Certificate ID <span class="mono">${esc(c.credential_id)}</span></div>
+    <div class="m-row"><div style="display:flex;gap:8px;flex-wrap:wrap">${c.verify?`<a class="m-link primary" href="${esc(c.verify)}" target="_blank" rel="noopener">Verify on Simplilearn ↗</a>`:""}<button class="m-link" id="mCopy">Copy ID</button>${proj?`<button class="m-link" id="mProj">Related project</button>`:""}</div>
+    <div class="m-nav"><button class="m-link" id="mPrev" aria-label="Previous certificate">←</button><span class="mono" style="align-self:center;color:var(--faint);font-size:.78rem">${i+1} / ${list.length}</span><button class="m-link" id="mNext" aria-label="Next certificate">→</button></div></div></div>`);
+  $("#mCopy").onclick=()=>copy(c.credential_id,"Certificate ID copied");
+  if(proj) $("#mProj").onclick=()=>openProject(proj.id);
+  $("#mPrev").onclick=()=>openCert(list[(i-1+list.length)%list.length].credential_id);
+  $("#mNext").onclick=()=>openCert(list[(i+1)%list.length].credential_id);
+}
+function openProject(id){
+  const p=DATA.projects.find(x=>x.id===id); if(!p) return; const c=p.cert&&certs.find(x=>x.credential_id===p.cert);
+  openModal(`<div class="m-body" style="padding-top:28px"><span class="label">${esc(p.kind)} · ${esc(p.domain)}</span><h3 id="mTitle">${esc(p.title)}</h3>
+    <div><span class="pill now">Passed · first attempt</span><span class="pill">${esc(p.tool)}</span>${p.completed?`<span class="pill">Certified ${esc(p.completed)}</span>`:""}</div>
+    <h4>Problem</h4><p>${esc(p.problem)}</p><h4>Objective</h4><p>${esc(p.objective)}</p>
+    <h4>What the brief required</h4><ul>${p.tasks.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>
+    ${c?`<h4>Certificate</h4><button class="m-cert" id="mCert"><img src="${esc(c.img)}" alt=""><span><span style="display:block">${esc(c.title)}</span><span class="mono" style="color:var(--faint);font-size:.76rem">${esc(c.issued)} · ID ${esc(c.credential_id)}</span></span></button>`:""}
+    <div class="m-row">${p.live?`<a class="m-link primary" href="#dashboard" id="mLive">Open the live rebuild</a>`:"<span></span>"}<span class="mono" style="color:var(--faint);font-size:.76rem">Assessed by Simplilearn</span></div></div>`);
+  if(c) $("#mCert").onclick=()=>openCert(c.credential_id);
+  if(p.live) $("#mLive").onclick=()=>closeModal();
+}
+
+/* ============================ Microsoft Learn ============================ */
+(function(){
+  const M=DATA.mslearn, TC={"Power BI":"var(--c1)","Copilot and AI":"var(--c3)","Data analytics":"var(--c2)"};
+  $("#msLvl").textContent=M.level; $("#msXp").textContent=`${M.xp.toLocaleString("en-IN")} / ${M.next.toLocaleString("en-IN")} XP`;
+  $("#msBar").dataset.w=(M.xp/M.next*100).toFixed(1)+"%"; $("#msLink").href=M.profile;
+  $("#msStats").innerHTML=[[M.badges,"Badges"],[M.trophies,"Trophies"],[M.modules.filter(m=>m[3]).length,"Assessments passed"]].map(([n,l])=>`<div><b>${n}</b><span>${l}</span></div>`).join("");
+  const all=[...M.paths,...M.modules,...M.courses], topics=Object.keys(TC);
+  $("#msTopics").innerHTML=topics.map(t=>{const n=all.filter(x=>x[2]===t).length;return `<div class="row"><span>${t}</span><span class="tr"><i style="width:${n/all.length*100}%;background:${TC[t]}"></i></span><span>${n}</span></div>`}).join("");
+  const TABS=[["paths","Learning paths",M.paths,"Trophy"],["modules","Modules",M.modules,"Badge"],["courses","Course",M.courses,"Badge"]];
+  const ICO={Trophy:'<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8"/>',Badge:'<circle cx="12" cy="9" r="5"/><path d="m9 13-2 8 5-3 5 3-2-8"/>'};
+  $("#msTabs").innerHTML=TABS.map(([k,l,a],i)=>`<button aria-pressed="${i===0}" data-k="${k}">${l} <span class="mono" style="opacity:.6;margin-left:4px">${a.length}</span></button>`).join("");
+  function show(k){const [,,arr,kind]=TABS.find(t=>t[0]===k);
+    $("#msList").innerHTML=[...arr].sort((a,b)=>ym(b[1])-ym(a[1])).map((x,i)=>`<div class="ms-item" style="animation-delay:${Math.min(i,12)*30}ms"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="${TC[x[2]]}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICO[kind]}</svg></span><span class="t">${esc(x[0])}<small>${kind} · ${x[2]}</small></span><span class="d">${x[1]}${x[3]?"<em>Assessment passed</em>":""}</span></div>`).join("");}
+  $$("#msTabs button").forEach(b=>b.onclick=()=>{$$("#msTabs button").forEach(x=>x.setAttribute("aria-pressed",x===b));show(b.dataset.k)});
+  show("paths");
+})();
+
+/* ============================ projects ============================ */
+function projArt(tool){
+  const W=400,H=150; let s=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true">`;
+  if(tool==="Predictive analytics"){let q=11;const r=()=>(q=(q*9301+49297)%233280)/233280;for(let i=0;i<70;i++){const x=20+r()*360,y=130-(x-20)*.28-r()*40-(r()<.18?40:0);s+=`<circle cx="${x}" cy="${y}" r="3" fill="${y<70?"var(--c2)":"var(--c1)"}" opacity=".8"/>`}s+=`<path d="M20 128 L380 26" stroke="var(--c3)" stroke-width="2" stroke-dasharray="5 5"/>`}
+  else if(tool==="Tableau"){[60,82,48,90,70,96].forEach((h,i)=>{const x=40+i*58;s+=`<rect x="${x}" y="${140-h}" width="18" height="${h}" rx="4" fill="var(--c1)"/><rect x="${x+21}" y="${140-h*.72}" width="18" height="${h*.72}" rx="4" fill="var(--c2)" opacity=".8"/>`})}
+  else if(tool==="Excel"){for(let r=0;r<6;r++)for(let c=0;c<8;c++)s+=`<rect x="${16+c*47}" y="${12+r*22}" width="44" height="19" rx="3" fill="var(--line)"/>`;s+=`<polyline points="30,120 80,96 130,104 180,70 230,82 280,46 330,58 372,30" fill="none" stroke="var(--c1)" stroke-width="3" stroke-linejoin="round"/>`}
+  else if(tool==="SQL"){const t=["SELECT emp_id, rating","FROM employees","WHERE rating >= 4","ORDER BY salary DESC;"];t.forEach((l,i)=>{s+=`<text x="24" y="${36+i*28}" font-family="Geist Mono,monospace" font-size="15" fill="${i%2?"var(--muted)":"var(--c2)"}">${l}</text>`})}
+  else {[300,250,210,170,130,96,60].forEach((w,i)=>{s+=`<rect x="20" y="${12+i*19}" width="${w}" height="13" rx="4" fill="${i<2?"var(--c1)":"var(--line-2)"}"/>`})}
+  return s+`</svg>`;
+}
+const PROJ=DATA.projects;
+$("#projGrid").innerHTML=PROJ.map(p=>`
+  <button class="card spot proj reveal" data-id="${p.id}" data-tool="${esc(p.tool)}" aria-label="Open project: ${esc(p.title)}">
+    <div class="art">${projArt(p.tool)}</div>
+    <span class="k">${esc(p.kind)} · ${esc(p.domain)}</span>
+    <h3>${esc(p.title)}</h3>
+    <p>${esc(p.summary)}</p>
+    <span class="foot"><span><span class="pill">${esc(p.tool)}</span> <span class="pill now">Passed</span></span><span class="more">${p.live?"Brief and live rebuild":"Read the brief"} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+  </button>`).join("");
+$$("#projGrid .proj").forEach(b=>b.onclick=()=>openProject(b.dataset.id));
+const tools=["All",...new Set(PROJ.map(p=>p.tool))];
+$("#projFilters").innerHTML=tools.map((t,i)=>`<button aria-pressed="${i===0}" data-t="${esc(t)}">${esc(t)}</button>`).join("");
+$$("#projFilters button").forEach(b=>b.onclick=()=>{$$("#projFilters button").forEach(x=>x.setAttribute("aria-pressed",x===b));$$(".proj").forEach(c=>c.classList.toggle("hide",b.dataset.t!=="All"&&c.dataset.tool!==b.dataset.t))});
+
+/* ============================ live dashboard (synthetic, seeded) ============================ */
+(function(){
+  let seed=20260202; const R=()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+  const REG=["North","South","East","West"], RF={North:1,South:1.18,East:.86,West:1.08}, DISC={North:.06,South:.05,East:.12,West:.07};
+  const CATS=["Furniture","Office Supplies","Technology"], MIX={North:[.32,.38,.3],South:[.24,.34,.42],East:[.4,.36,.24],West:[.28,.34,.38]};
+  const SUBS={Furniture:[["Chairs",9000],["Tables",16000],["Bookcases",11000]],"Office Supplies":[["Paper",650],["Binders",900],["Storage",2600]],Technology:[["Phones",21000],["Laptops",52000],["Accessories",3200]]};
+  const SEGS=[["Consumer",.52],["Corporate",.3],["Home Office",.18]], SEASON=[.82,.78,.96,.9,.93,.88,.9,.97,1.02,1.16,1.24,1.3];
+  const MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const pick=w=>{let x=R(),i=0;for(;i<w.length-1;i++){x-=w[i];if(x<0)break}return i};
+  const rows=[];
+  for(let m=0;m<12;m++)for(const r of REG){const n=Math.round(54*RF[r]*SEASON[m]*(.9+R()*.2));
+    for(let k=0;k<n;k++){const cat=CATS[pick(MIX[r])], [sub,price]=SUBS[cat][Math.floor(R()*3)], seg=SEGS[pick(SEGS.map(s=>s[1]))][0];
+      const qty=1+Math.floor(R()*4), d=R()<.55?0:Math.min(.4,DISC[r]+R()*.2), sales=price*qty*(1-d)*(.85+R()*.3);
+      rows.push({m,r,cat,sub,seg,sales,profit:sales*(.22-d*1.1+(R()-.5)*.12)})}}
+  $("#dash .d-sub").textContent=`${rows.length.toLocaleString("en-IN")} orders · 4 regions · 3 categories · 9 sub-categories`;
+
+  const DEF={a:"South",b:"East",seg:"All",from:0,to:11,cats:new Set(CATS)}; let S={...DEF,cats:new Set(CATS)};
+  const inr=v=>{const a=Math.abs(v),sg=v<0?"−":"";return a>=1e7?`${sg}₹${(a/1e7).toFixed(2)} crore`:a>=1e5?`${sg}₹${(a/1e5).toFixed(1)} lakh`:`${sg}₹${Math.round(a).toLocaleString("en-IN")}`};
+  const lakh=v=>{if(!v)return "0";const l=v/1e5;return `${Number.isInteger(+l.toFixed(1))?l.toFixed(0):l.toFixed(1)}L`};
+  const opt=(arr,sel)=>arr.map(x=>`<option ${x===sel?"selected":""}>${x}</option>`).join("");
+  $("#dA").innerHTML=opt(REG,S.a); $("#dB").innerHTML=opt(REG,S.b); $("#dSeg").innerHTML=opt(["All",...SEGS.map(s=>s[0])],S.seg);
+  $("#dCats").innerHTML=CATS.map(c=>`<button aria-pressed="true" data-c="${c}">${c}</button>`).join("");
+  $("#dLegend").innerHTML=`<span><i class="sw a"></i><b style="font-weight:400" id="lgA"></b></span><span><i class="sw b"></i><b style="font-weight:400" id="lgB"></b></span>`;
+
+  function agg(region){
+    const o={sales:0,profit:0,orders:0,month:Array(12).fill(0),cat:{},sub:{}};
+    for(const x of rows){ if(x.r!==region||x.m<S.from||x.m>S.to||!S.cats.has(x.cat)||(S.seg!=="All"&&x.seg!==S.seg)) continue;
+      o.sales+=x.sales;o.profit+=x.profit;o.orders++;o.month[x.m]+=x.sales;o.cat[x.cat]=(o.cat[x.cat]||0)+x.sales;o.sub[x.sub]=(o.sub[x.sub]||0)+x.sales }
+    o.margin=o.sales?o.profit/o.sales*100:0; return o;
+  }
+  const pct=(a,b)=>b?((a-b)/Math.abs(b)*100):0;
+
+  function render(){
+    const A=agg(S.a),B=agg(S.b); $("#lgA").textContent=S.a; $("#lgB").textContent=S.b;
+    $("#dRangeLbl").textContent=`${MN[S.from]} – ${MN[S.to]}`;
+    // KPIs
+    const K=[["Sales",A.sales,B.sales,inr],["Profit",A.profit,B.profit,inr],["Profit margin",A.margin,B.margin,v=>v.toFixed(1)+"%"],["Orders",A.orders,B.orders,v=>v.toLocaleString("en-IN")]];
+    $("#dKpis").innerHTML=K.map(([l,a,b,f])=>{const d=l==="Profit margin"?a-b:pct(a,b);const unit=l==="Profit margin"?" pts":"%";
+      return `<div class="kpi"><span class="label">${l}</span><div class="row"><span class="r"><i class="sw a"></i>${S.a}</span><span class="v">${f(a)}</span></div><div class="row"><span class="r"><i class="sw b"></i>${S.b}</span><span class="v" style="color:var(--muted)">${f(b)}</span></div><div class="delta ${d>=0?"up":"down"}">${d>=0?"▲":"▼"} ${Math.abs(d).toFixed(1)}${unit} ${S.a} vs ${S.b}</div></div>`}).join("");
+    // insight
+    const gaps=Object.keys({...A.sub,...B.sub}).map(k=>[k,(A.sub[k]||0)-(B.sub[k]||0)]).sort((p,q)=>Math.abs(q[1])-Math.abs(p[1]));
+    const lead=A.sales>=B.sales, lo=A.margin<B.margin?S.a:S.b;
+    $("#dInsight").innerHTML=A.orders&&B.orders?`<span class="a">${S.a}</span> ${lead?"leads":"trails"} <span class="b">${S.b}</span> by ${inr(Math.abs(A.sales-B.sales))} (${Math.abs(pct(A.sales,B.sales)).toFixed(1)}%) in sales for ${MN[S.from]} to ${MN[S.to]}${S.seg!=="All"?`, ${S.seg} segment`:""}. The largest gap is in ${gaps[0][0]} (${inr(Math.abs(gaps[0][1]))} in favour of ${gaps[0][1]>=0?S.a:S.b}), and ${lo} runs the lower margin at ${Math.min(A.margin,B.margin).toFixed(1)}%.`:"No orders match these filters. Widen the month range or add a category.";
+    lineChart(A,B); barChart(A,B); table(A,B);
+  }
+
+  function lineChart(A,B){
+    const el=$("#dLine"), W=Math.max(280,el.clientWidth||600), H=240, P={l:46,r:12,t:12,b:26};
+    const ms=[];for(let m=S.from;m<=S.to;m++)ms.push(m);
+    const top=Math.max(1,...ms.map(m=>Math.max(A.month[m],B.month[m])));
+    const raw=top/4, p10=10**Math.floor(Math.log10(raw)), step=[1,2,2.5,5,10].map(f=>f*p10).find(v=>v>=raw), max=step*4;
+    const x=i=>P.l+(ms.length===1?(W-P.l-P.r)/2:i*(W-P.l-P.r)/(ms.length-1)), y=v=>H-P.b-v/max*(H-P.t-P.b);
+    const path=o=>ms.map((m,i)=>`${i?"L":"M"}${x(i).toFixed(1)},${y(o.month[m]).toFixed(1)}`).join("");
+    let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Monthly sales, ${S.a} versus ${S.b}"><defs><linearGradient id="dga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--c1)" stop-opacity=".28"/><stop offset="1" stop-color="var(--c1)" stop-opacity="0"/></linearGradient></defs>`;
+    for(let k=0;k<=4;k++){const v=step*k;s+=`<line x1="${P.l}" x2="${W-P.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${P.l-8}" y="${y(v)+4}" text-anchor="end" font-size="10" font-family="Geist Mono,monospace" fill="var(--faint)">${lakh(v)}</text>`}
+    if(ms.length>1) s+=`<path d="${path(A)}L${x(ms.length-1)},${H-P.b}L${x(0)},${H-P.b}Z" fill="url(#dga)"/>`;
+    s+=`<path d="${path(B)}" fill="none" stroke="var(--c2)" stroke-width="2" stroke-dasharray="5 4"/><path d="${path(A)}" fill="none" stroke="var(--c1)" stroke-width="2.5" stroke-linejoin="round"/>`;
+    ms.forEach((m,i)=>{s+=`<text x="${x(i)}" y="${H-6}" text-anchor="middle" font-size="10" font-family="Geist Mono,monospace" fill="var(--faint)">${MN[m]}</text><circle cx="${x(i)}" cy="${y(A.month[m])}" r="3.5" fill="var(--bg-elev)" stroke="var(--c1)" stroke-width="2"/><circle cx="${x(i)}" cy="${y(B.month[m])}" r="3" fill="var(--bg-elev)" stroke="var(--c2)" stroke-width="2"/>`});
+    const bw=(W-P.l-P.r)/Math.max(1,ms.length);
+    ms.forEach((m,i)=>s+=`<rect class="hit" data-m="${m}" data-i="${i}" x="${x(i)-bw/2}" y="${P.t}" width="${bw}" height="${H-P.t-P.b}" fill="transparent"/>`);
+    el.innerHTML=s+`</svg><div class="d-tip" id="dTip"></div>`;
+    const tip=$("#dTip"), svg=$("svg",el);
+    $$(".hit",el).forEach(h=>{h.onpointerenter=()=>{const m=+h.dataset.m,i=+h.dataset.i;
+      tip.innerHTML=`<div class="mono" style="color:var(--faint)">${MN[m]} 2025</div><div><i class="sw a"></i> ${S.a}: ${inr(A.month[m])}</div><div><i class="sw b"></i> ${S.b}: ${inr(B.month[m])}</div>`;
+      const sc=svg.getBoundingClientRect().width/W; tip.style.left=Math.min(el.clientWidth-tip.offsetWidth,Math.max(0,x(i)*sc-tip.offsetWidth/2))+"px"; tip.style.top=Math.max(0,y(Math.max(A.month[m],B.month[m]))*sc-tip.offsetHeight-8)+"px"; tip.style.opacity=1};
+      h.onpointerleave=()=>tip.style.opacity=0});
+  }
+
+  function barChart(A,B){
+    const cats=CATS.filter(c=>S.cats.has(c)), W=320, rowH=58, H=cats.length*rowH+8, L=0;
+    const max=Math.max(1,...cats.map(c=>Math.max(A.cat[c]||0,B.cat[c]||0)));
+    let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Sales by category">`;
+    cats.forEach((c,i)=>{const y0=i*rowH+4, wa=(A.cat[c]||0)/max*(W-90), wb=(B.cat[c]||0)/max*(W-90);
+      s+=`<text x="${L}" y="${y0+10}" font-size="12" fill="var(--muted)" font-family="Geist,sans-serif">${c}</text>
+      <rect x="${L}" y="${y0+18}" width="${Math.max(2,wa)}" height="13" rx="4" fill="var(--c1)"/><text x="${L+wa+6}" y="${y0+29}" font-size="10.5" font-family="Geist Mono,monospace" fill="var(--text)">${lakh(A.cat[c]||0)}</text>
+      <rect x="${L}" y="${y0+34}" width="${Math.max(2,wb)}" height="13" rx="4" fill="var(--c2)" opacity=".85"/><text x="${L+wb+6}" y="${y0+45}" font-size="10.5" font-family="Geist Mono,monospace" fill="var(--muted)">${lakh(B.cat[c]||0)}</text>`});
+    $("#dBars").innerHTML=s+`</svg>`;
+  }
+
+  function table(A,B){
+    const subs=CATS.filter(c=>S.cats.has(c)).flatMap(c=>SUBS[c].map(([n])=>[n,c]));
+    const rowsT=subs.map(([n,c])=>({n,c,a:A.sub[n]||0,b:B.sub[n]||0})).map(r=>({...r,g:r.a-r.b})).sort((p,q)=>Math.abs(q.g)-Math.abs(p.g));
+    const mg=Math.max(1,...rowsT.map(r=>Math.abs(r.g)));
+    $("#dTable").innerHTML=`<table><thead><tr><th>Sub-category</th><th>Category</th><th class="num">${esc(S.a)}</th><th class="num">${esc(S.b)}</th><th>Gap</th><th class="num">Difference</th></tr></thead><tbody>${rowsT.map(r=>{const w=Math.abs(r.g)/mg*50;
+      return `<tr><td>${r.n}</td><td style="color:var(--muted)">${r.c}</td><td class="num">${inr(r.a)}</td><td class="num">${inr(r.b)}</td><td><div class="gap"><i style="${r.g>=0?`left:50%;width:${w}%;background:var(--c1)`:`left:${50-w}%;width:${w}%;background:var(--c2)`}"></i></div></td><td class="num ${r.g>=0?"up":"down"}">${r.g>=0?"+":""}${inr(r.g)}</td></tr>`}).join("")}</tbody></table>`;
+  }
+
+  $("#dA").onchange=e=>{if(e.target.value===S.b){S.b=S.a;$("#dB").value=S.b}S.a=e.target.value;render()};
+  $("#dB").onchange=e=>{if(e.target.value===S.a){S.a=S.b;$("#dA").value=S.a}S.b=e.target.value;render()};
+  $("#dSeg").onchange=e=>{S.seg=e.target.value;render()};
+  $("#dFrom").oninput=e=>{S.from=Math.min(+e.target.value,S.to);e.target.value=S.from;render()};
+  $("#dTo").oninput=e=>{S.to=Math.max(+e.target.value,S.from);e.target.value=S.to;render()};
+  $$("#dCats button").forEach(b=>b.onclick=()=>{const c=b.dataset.c;if(S.cats.has(c)){if(S.cats.size===1){toast("Keep at least one category selected");return}S.cats.delete(c)}else S.cats.add(c);b.setAttribute("aria-pressed",S.cats.has(c));render()});
+  $("#dReset").onclick=()=>{S={...DEF,cats:new Set(CATS)};$("#dA").value=S.a;$("#dB").value=S.b;$("#dSeg").value=S.seg;$("#dFrom").value=0;$("#dTo").value=11;$$("#dCats button").forEach(b=>b.setAttribute("aria-pressed","true"));render();toast("Filters reset")};
+  let rt; addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(render,150)});
+  render();
+})();
+
+/* ============================ misc ============================ */
+$("#copyMail").onclick=()=>copy(EMAIL,"Email address copied");
+bindTilt();
+
+/* ============================ command palette ============================ */
+const PAL=[
+  ...[["About","about"],["Journey","journey"],["Process","flow"],["Projects","projects"],["Live dashboard","dashboard"],["Query console","console"],["Credentials","certs"],["Capabilities","skills"],["Contact","contact"]].map(([l,id])=>({l,h:"Go to",run:()=>document.getElementById(id).scrollIntoView({behavior:"smooth"})})),
+  ...SAMPLES.map(([l,q])=>({l:"Run query: "+l,h:"SQL",run:()=>{$("#console").scrollIntoView({behavior:"smooth"});setTimeout(()=>typeQuery(q),500)}})),
+  ...DATA.projects.map(p=>({l:"Project: "+p.title,h:p.tool,run:()=>openProject(p.id)})),
+  ...DATA.certifications.filter(c=>c.img).map(c=>({l:"Certificate: "+c.title,h:"View",run:()=>openCert(c.credential_id)})),
+  {l:"Microsoft Learn transcript",h:"Go to",run:()=>$("#msLearn").scrollIntoView({behavior:"smooth",block:"center"})},
+  {l:"Toggle light or dark theme",h:"Action",run:()=>$("#themeBtn").click()},
+  {l:"Copy email address",h:"Action",run:()=>copy(EMAIL,"Email address copied")},
+  {l:"Open GitHub profile",h:"Link",run:()=>{const a=document.createElement("a");a.href="https://github.com/navagowda";a.target="_blank";a.rel="noopener";document.body.append(a);a.click();a.remove()}},
+  {l:"Open LinkedIn profile",h:"Link",run:()=>{const a=document.createElement("a");a.href="https://www.linkedin.com/in/nava-gowda-a-s-0970102b2/";a.target="_blank";a.rel="noopener";document.body.append(a);a.click();a.remove()}}
+];
+let ps=0,pv=[];
+const openPal=()=>{$("#palette").classList.add("open");$("#palInput").value="";ps=0;drawPal();setTimeout(()=>$("#palInput").focus(),20)};
+const closePal=()=>$("#palette").classList.remove("open");
+function drawPal(){const q=$("#palInput").value.toLowerCase();pv=PAL.filter(p=>p.l.toLowerCase().includes(q));ps=Math.min(ps,Math.max(0,pv.length-1));
+  $("#palList").innerHTML=pv.map((p,i)=>`<li class="${i===ps?"sel":""}" data-i="${i}"><span>${esc(p.l)}</span><small>${p.h}</small></li>`).join("")||`<li><small>No results</small></li>`;
+  $$("#palList li[data-i]").forEach(li=>{li.onclick=()=>{closePal();pv[li.dataset.i].run()};li.onmouseenter=()=>{ps=+li.dataset.i;$$("#palList li").forEach((x,k)=>x.classList.toggle("sel",k===ps))}})}
+$("#palInput").oninput=()=>{ps=0;drawPal()};
+$("#palInput").onkeydown=e=>{if(e.key==="ArrowDown"){ps=Math.min(ps+1,pv.length-1);drawPal();e.preventDefault()}if(e.key==="ArrowUp"){ps=Math.max(ps-1,0);drawPal();e.preventDefault()}if(e.key==="Enter"&&pv[ps]){closePal();pv[ps].run()}};
+$("#palette").onclick=e=>{if(e.target.id==="palette")closePal()};
+$("#palBtn").onclick=openPal;
+addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openPal()}if(e.key==="Escape"){closePal();closeModal();MM.classList.remove("open");document.body.style.overflow=""}});
+
+observe();
+</script>
+</body>
+</html>
