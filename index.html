@@ -569,7 +569,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div class="card spot b-sm b-stat reveal">
         <span class="label">Credentials earned</span>
-        <div class="n"><span class="count" data-n="12">0</span></div>
+        <div class="n"><span class="count" data-n="14">0</span></div>
         <div style="color:var(--muted);font-size:.9rem;margin-top:8px">Including 2 Master's programmes with distinction, plus 28 Microsoft Learn badges</div>
       </div>
       <div class="card spot b-sm b-now reveal">
@@ -756,6 +756,8 @@ const DATA = {
   ],
   // Dates and codes are taken from the certificate PDFs; the last three entries come from LinkedIn.
   certifications: [
+    {title:"Claude 101", issuer:"Claude Academy", issued:"10-10-2026", type:"Course completion badge", credential_id:"97ff03828b0bf32103cec21e5ae1615a", verify:"https://academy.claude.com/verify/97ff03828b0bf32103cec21e5ae1615a"},
+    {title:"SLR, Bibliometric and Text Analysis", issuer:"Manuscriptpedia", issued:"09-10-2026", type:"5-day PDP · participation", credential_id:"MP8365", img:"certs/cert-pdp-slr.jpg"},
     {title:"Data Analyst", issuer:"Simplilearn", issued:"18-02-2026", type:"Master's programme · with distinction", credential_id:"174822785", verify:"https://success.simplilearn.com/50ea2a3f-ab73-452a-aa5d-50f33e9c2d66", img:"certs/cert-data-analyst.jpg", tall:true},
     {title:"Data Scientist", issuer:"Simplilearn", issued:"10-12-2025", type:"Master's programme · with distinction", credential_id:"168919124", verify:"https://success.simplilearn.com/bc511ef6-74c0-466e-bf63-f3cfac5b79a1", img:"certs/cert-data-scientist.jpg", tall:true},
     {title:"Machine Learning using Python", issuer:"Simplilearn", issued:"12-03-2026", type:"Course · project and test passed", credential_id:"9951147", img:"certs/cert-ml-python.jpg"},
@@ -853,8 +855,9 @@ const DATA = {
     {skill:"DAX and semantic models", category:"Visualisation", evidence:"Use DAX in semantic models path"},
     {skill:"Machine learning", category:"Machine learning", evidence:"ML using Python · project and test passed"},
     {skill:"Predictive modelling", category:"Machine learning", evidence:"Healthcare cost capstone"},
-    {skill:"Copilot and prompt writing", category:"Machine learning", evidence:"Microsoft Learn Copilot path"},
+    {skill:"Generative AI and prompt writing", category:"Machine learning", evidence:"Claude 101 · Microsoft Copilot path"},
     {skill:"Microsoft Fabric fundamentals", category:"Analysis", evidence:"Microsoft Learn module, assessment passed"},
+    {skill:"Systematic reviews and bibliometrics", category:"Analysis", evidence:"Manuscriptpedia 5-day PDP"},
     {skill:"Institutional reporting", category:"Institutional", evidence:"Data Analyst role, SDUAHER"},
     {skill:"Coordination", category:"Institutional", evidence:"Top skill on LinkedIn"}
   ]
@@ -1017,6 +1020,8 @@ const J=[
   {k:"edu",title:"MSc, Data Science",org:"Karnataka State Open University",when:"09-2025 — Present",tags:["Pursuing"],
    body:"Focus on Python, statistics, data analysis and machine learning fundamentals, building skills through coursework, hands-on practice and academic projects.",
    pts:["Activities: academic projects, data science workshops, online learning and collaborative study groups"]},
+  {k:"edu",title:"PDP: SLR, Bibliometric and Text Analysis",org:"Manuscriptpedia · online",when:"05-10-2026 — 09-10-2026",tags:["Participation"],
+   body:"Five-day Professional Development Programme on systematic literature reviews, bibliometric analysis and text analysis.",pts:["Certificate ID MP8365"]},
   {k:"edu",title:"Data Analyst Master's Programme",org:"Simplilearn",when:"18-02-2026",tags:["With distinction"],
    body:"Graduated having completed all mandated course requirements and industry projects with distinction.",
    pts:[]},
@@ -1191,7 +1196,7 @@ function execute(){
 TA.value=SAMPLES[0][1]; highlight(); execute();
 
 /* ============================ certifications ============================ */
-const ISS={"Simplilearn":"SL","IBM":"IBM","Microsoft Learn":"MS"};
+const ISS={"Simplilearn":"SL","IBM":"IBM","Microsoft Learn":"MS","Claude Academy":"CA","Manuscriptpedia":"MP"};
 const dist=c=>/distinction/.test(c.type);
 const certs=[...DATA.certifications].sort((a,b)=>(dist(b)-dist(a))||(!!b.img-!!a.img)||(ym(b.issued)-ym(a.issued)));
 const issuers=["All",...new Set(certs.map(c=>c.issuer))];
@@ -1212,7 +1217,7 @@ $$("#certFilters button").forEach(b=>b.onclick=()=>{
   $$(".cert").forEach(c=>c.classList.toggle("hide",b.dataset.s!=="All"&&c.dataset.s!==b.dataset.s));
 });
 $("#issuers").innerHTML=issuers.slice(1).map(s=>{const n=certs.filter(c=>c.issuer===s).length;return `<div class="issuer-row"><div class="top"><span>${esc(s)}</span><span>${n} of ${certs.length}</span></div><div class="track"><i data-w="${n/certs.length*100}%"></i></div></div>`}).join("")
-  + `<p style="color:var(--faint);font-size:.8rem;margin:6px 0 0">Nine certificates are shown from the original PDFs. The IBM course and Python 101 are listed as shown on LinkedIn. The Microsoft Learn course links to the public transcript.</p>`;
+  + `<p style="color:var(--faint);font-size:.8rem;margin:6px 0 0">Ten certificates are shown from the original PDFs. Claude 101 links to its Claude Academy verification page and the Microsoft Learn course to the public transcript. The IBM course and Python 101 are listed as shown on LinkedIn.</p>`;
 
 function drawChart(animate){
   const svg=$("#certChart"), W=svg.clientWidth||520, H=220, pad={l:28,r:12,t:16,b:30};
@@ -1226,7 +1231,8 @@ function drawChart(animate){
   per.forEach((a,i)=>{const bh=a.length/max*(H-pad.t-pad.b); s+=`<rect x="${x(i)-9}" y="${H-pad.b-bh}" width="18" height="${bh}" rx="4" fill="var(--c2)" opacity=".28"/>`});
   s+=`<path d="${area}" fill="url(#ar)" opacity="${animate?0:1}">${animate?'<animate attributeName="opacity" begin=".9s" dur=".8s" to="1" fill="freeze"/>':""}</path>`;
   s+=`<path d="${line}" fill="none" stroke="url(#ln)" stroke-width="2.5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${animate?1:0}">${animate?'<animate attributeName="stroke-dashoffset" dur="1.4s" to="0" fill="freeze" calcMode="spline" keySplines=".16 1 .3 1"/>':""}</path>`;
-  months.forEach((m,i)=>{s+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" fill="var(--faint)" font-size="10" font-family="Geist Mono">${m}</text><circle cx="${x(i)}" cy="${y(pts[i])}" r="4.5" fill="var(--bg)" stroke="var(--c1)" stroke-width="2"/><rect class="hit" data-i="${i}" x="${x(i)-22}" y="${pad.t}" width="44" height="${H-pad.t-pad.b}" fill="transparent"/>`});
+  const every=Math.ceil(months.length/Math.max(3,Math.floor(W/70)));
+  months.forEach((m,i)=>{s+=`${(i%every===0||i===months.length-1)&&!(i!==months.length-1&&months.length-1-i<every)?`<text x="${x(i)}" y="${H-8}" text-anchor="middle" fill="var(--faint)" font-size="10" font-family="Geist Mono">${m}</text>`:""}<circle cx="${x(i)}" cy="${y(pts[i])}" r="4.5" fill="var(--bg)" stroke="var(--c1)" stroke-width="2"/><rect class="hit" data-i="${i}" x="${x(i)-22}" y="${pad.t}" width="44" height="${H-pad.t-pad.b}" fill="transparent"/>`});
   svg.setAttribute("viewBox",`0 0 ${W} ${H}`); svg.innerHTML=s;
   const tip=$("#chartTip"), card=$("#chartCard");
   $$(".hit",svg).forEach(h=>{
@@ -1259,7 +1265,7 @@ function openCert(id){
   openModal(`<div class="m-img"><img src="${esc(c.img)}" alt="Certificate: ${esc(c.title)}, issued to Nava Gowda A S"></div>
     <div class="m-body"><span class="label">${esc(c.issuer)} · ${esc(c.type)}</span><h3 id="mTitle">${esc(c.title)}</h3>
     <div class="meta">Issued ${esc(c.issued)} · Certificate ID <span class="mono">${esc(c.credential_id)}</span></div>
-    <div class="m-row"><div style="display:flex;gap:8px;flex-wrap:wrap">${c.verify?`<a class="m-link primary" href="${esc(c.verify)}" target="_blank" rel="noopener">Verify on Simplilearn ↗</a>`:""}<button class="m-link" id="mCopy">Copy ID</button>${proj?`<button class="m-link" id="mProj">Related project</button>`:""}</div>
+    <div class="m-row"><div style="display:flex;gap:8px;flex-wrap:wrap">${c.verify?`<a class="m-link primary" href="${esc(c.verify)}" target="_blank" rel="noopener">Verify on ${esc(c.issuer)} ↗</a>`:""}<button class="m-link" id="mCopy">Copy ID</button>${proj?`<button class="m-link" id="mProj">Related project</button>`:""}</div>
     <div class="m-nav"><button class="m-link" id="mPrev" aria-label="Previous certificate">←</button><span class="mono" style="align-self:center;color:var(--faint);font-size:.78rem">${i+1} / ${list.length}</span><button class="m-link" id="mNext" aria-label="Next certificate">→</button></div></div></div>`);
   $("#mCopy").onclick=()=>copy(c.credential_id,"Certificate ID copied");
   if(proj) $("#mProj").onclick=()=>openProject(proj.id);
