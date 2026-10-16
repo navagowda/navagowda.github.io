@@ -7,12 +7,21 @@
 <title>Nava Gowda A S | Data Analyst</title>
 <meta name="description" content="Nava Gowda A S — Data Analyst working in institutional data analytics, MSc Data Science student, Bengaluru.">
 <meta name="author" content="Nava Gowda A S">
-<meta property="og:title" content="Nava Gowda A S | Data Analyst">
-<meta property="og:description" content="Institutional data analytics · Python · SQL · Tableau · Machine Learning">
-<meta property="og:image" content="https://navagowda.github.io/photo.jpeg">
-<meta property="og:url" content="https://navagowda.github.io/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Nava Gowda A S">
+<meta property="og:url" content="https://navagowda.github.io/">
+<meta property="og:title" content="Nava Gowda A S | Data Analyst">
+<meta property="og:description" content="Data analyst in institutional analytics. Power BI, SQL, Python, Tableau and machine learning, with live projects and verifiable credentials.">
+<meta property="og:image" content="https://navagowda.github.io/og.jpg">
+<meta property="og:image:secure_url" content="https://navagowda.github.io/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nava Gowda A S, Data Analyst: Power BI, SQL, Python, Tableau, ML">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nava Gowda A S | Data Analyst">
+<meta name="twitter:description" content="Data analyst in institutional analytics. Power BI, SQL, Python, Tableau and machine learning.">
+<meta name="twitter:image" content="https://navagowda.github.io/og.jpg">
 <link rel="canonical" href="https://navagowda.github.io/">
 <meta name="theme-color" content="#06070a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2306070a'/%3E%3Cpath d='M18 46V18l28 28V18' stroke='%2367e8f9' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -476,6 +485,35 @@ a.copy:hover{text-decoration:none}
 footer{border-top:1px solid var(--line);padding:28px 0;color:var(--faint);font-size:.8rem}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+/* Contact drop: always-dark world with a fixed live-analytics canvas revealed by clip-path */
+.drop{--bg:#050608;--bg-elev:#0c0e13;--surface:rgba(255,255,255,.05);--surface-2:rgba(255,255,255,.09);--line:rgba(255,255,255,.1);--line-2:rgba(255,255,255,.2);--text:#f1f1f3;--muted:#a3a8b2;--faint:#6d727c;--c1:#67e8f9;--c2:#a78bfa;--c3:#f0abfc;--ok:#86efac;--glow:rgba(103,232,249,.14);
+  position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;clip-path:inset(0);background:var(--bg);color:var(--text);text-align:left;padding:0;margin-top:120px;color-scheme:dark}
+.drop-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;display:block;pointer-events:none}
+.drop-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(5,6,8,.82) 0%,rgba(5,6,8,.38) 42%,rgba(5,6,8,.55) 70%,rgba(5,6,8,.94) 100%)}
+.drop-main{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center;width:100%;padding-top:150px;padding-bottom:64px}
+@media (max-width:900px){.drop-main{grid-template-columns:1fr;gap:40px;padding-top:120px}}
+.drop-left{min-width:0}
+.d-status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:500 .7rem "Geist Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#d4d6db;margin-bottom:26px}
+.drop .eyebrow{display:flex;margin-bottom:8px}
+.drop h2{font-size:clamp(2.5rem,8.4vw,7.6rem);letter-spacing:-.06em;line-height:.92;margin:14px 0 26px;text-shadow:0 20px 60px rgba(0,0,0,.4)}
+.drop h2 .w>span:not(:has(.serif)){background:linear-gradient(180deg,#ffffff 0%,#d4d4d8 55%,#71717a 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.drop-lead{color:#c3c7cf;font-size:clamp(1rem,1.4vw,1.15rem);font-weight:300;max-width:46ch;margin:0}
+.drop .mail{margin-top:30px}
+.drop .contact-actions{justify-content:flex-start;margin-top:30px}
+.drop-card{position:relative;border:1px solid var(--line);border-radius:24px;padding:26px;background:rgba(12,14,19,.55);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);box-shadow:0 30px 80px rgba(0,0,0,.45);min-width:0}
+.drop-card .label{margin-bottom:10px;display:block}
+.el-row{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;padding:13px 6px;border-bottom:1px solid var(--line);color:var(--text);transition:transform .4s var(--ease),background .3s;border-radius:10px}
+.el-row:hover{text-decoration:none;transform:translateX(4px);background:rgba(255,255,255,.04)}
+.el-row b{display:block;font-weight:500;font-size:.98rem}
+.el-row small{display:block;color:var(--faint);font:400 .74rem "Geist Mono",monospace;margin-top:2px}
+.el-row svg{color:var(--muted);transition:transform .4s var(--ease)}
+.el-row:hover svg{transform:translate(2px,-2px);color:var(--c1)}
+.el-ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line-2);background:rgba(255,255,255,.05);font:600 .72rem Geist,sans-serif;letter-spacing:.02em}
+.drop-q{margin-top:18px;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.35);font-size:.76rem;line-height:1.7;color:#cfd3da;word-break:break-word}
+.drop-res{display:flex;align-items:center;gap:8px;margin-top:6px;color:var(--ok)}
+.drop-foot{position:relative;z-index:2;border-top:1px solid var(--line);color:var(--faint)}
+.drop-foot a{color:var(--muted)}
+
 /* Toast + palette */
 #toast{position:fixed;left:50%;bottom:28px;z-index:160;transform:translate(-50%,140%);padding:12px 18px;border-radius:14px;background:var(--text);color:var(--bg);font-size:.88rem;transition:transform .5s var(--ease)}
 #toast.show{transform:translate(-50%,0)}
@@ -720,22 +758,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </section>
 
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <span class="eyebrow">09 — Contact</span>
-    <h2 class="split" data-split style="margin-top:24px">Let us make data <span class="serif grad-text">useful</span>.</h2>
-    <a class="mail magnetic" href="mailto:navagowdaas@gmail.com" data-cursor="Write">navagowdaas@gmail.com <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-    <div class="contact-actions">
-      <button class="btn ghost magnetic" id="copyMail">Copy email</button>
-      <a class="btn ghost magnetic" href="https://github.com/navagowda" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn primary magnetic" href="https://www.linkedin.com/in/nava-gowda-a-s-0970102b2/" target="_blank" rel="noopener">Connect on LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<!-- CONTACT (full-screen drop with live analytics background) -->
+<section class="contact drop" id="contact">
+  <canvas class="drop-bg" id="dropBg" aria-hidden="true"></canvas>
+  <div class="drop-shade" aria-hidden="true"></div>
+  <div class="wrap drop-main">
+    <div class="drop-left">
+      <span class="d-status reveal"><span class="live"></span>Open to data analytics roles and collaborations</span>
+      <span class="eyebrow">09 — Contact</span>
+      <h2 class="split" data-split>Let us make data <span class="serif grad-text">useful</span>.</h2>
+      <p class="drop-lead reveal">Open to collaborating on impactful data analytics and AI projects. Based in Bengaluru and working on IST.</p>
+      <a class="mail magnetic" href="mailto:navagowdaas@gmail.com" data-cursor="Write">navagowdaas@gmail.com <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <div class="contact-actions">
+        <button class="btn ghost magnetic" id="copyMail">Copy email</button>
+        <a class="btn ghost magnetic" href="https://github.com/navagowda" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn primary magnetic" href="https://www.linkedin.com/in/nava-gowda-a-s-0970102b2/" target="_blank" rel="noopener">Connect on LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
     </div>
+    <aside class="drop-card reveal">
+      <div class="label">Elsewhere</div>
+      <a class="el-row" href="https://www.linkedin.com/in/nava-gowda-a-s-0970102b2/" target="_blank" rel="noopener"><span class="el-ic">in</span><span><b>LinkedIn</b><small>nava-gowda-a-s</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <a class="el-row" href="https://github.com/navagowda" target="_blank" rel="noopener"><span class="el-ic">GH</span><span><b>GitHub</b><small>@navagowda</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <a class="el-row" href="https://learn.microsoft.com/en-us/users/navagowdaas-7630/" target="_blank" rel="noopener"><span class="el-ic">MS</span><span><b>Microsoft Learn</b><small>Level 7 · 28 badges</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <a class="el-row" href="https://academy.claude.com/verify/97ff03828b0bf32103cec21e5ae1615a" target="_blank" rel="noopener"><span class="el-ic">CA</span><span><b>Claude Academy</b><small>Claude 101 badge</small></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <div class="drop-q mono"><span class="tok-k">SELECT</span> status <span class="tok-k">FROM</span> nava <span class="tok-k">WHERE</span> open_to = <span class="tok-s">'collaboration'</span>;<span class="drop-res">→ <span class="live" style="width:7px;height:7px"></span> available</span></div>
+    </aside>
   </div>
+  <footer class="drop-foot"><div class="wrap"><span>© <span id="yr"></span> Nava Gowda A S · Greater Bengaluru Area</span><span class="mono">Press Ctrl K anywhere · <a href="#top">Back to top ↑</a></span></div></footer>
 </section>
 </main>
 
-<footer><div class="wrap"><span>© <span id="yr"></span> Nava Gowda A S · Greater Bengaluru Area</span><span class="mono">Press Ctrl K anywhere · <a href="#top">Back to top ↑</a></span></div></footer>
 
 <div id="toast" role="status" aria-live="polite"></div>
 <div id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="m-box" id="mBox"></div></div>
@@ -1421,6 +1473,65 @@ $$("#projFilters button").forEach(b=>b.onclick=()=>{$$("#projFilters button").fo
   $("#dReset").onclick=()=>{S={...DEF,cats:new Set(CATS)};$("#dA").value=S.a;$("#dB").value=S.b;$("#dSeg").value=S.seg;$("#dFrom").value=0;$("#dTo").value=11;$$("#dCats button").forEach(b=>b.setAttribute("aria-pressed","true"));render();toast("Filters reset")};
   let rt; addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(render,150)});
   render();
+})();
+
+/* ============================ contact drop: live analytics canvas ============================ */
+(function(){
+  const cv=$("#dropBg"), sec=$("#contact"); if(!cv) return; const ctx=cv.getContext("2d");
+  let W=0,H=0,dpr=1,run=false,last=0,mx=-1,my=-1;
+  const COL=[[103,232,249],[167,139,250],[240,171,252],[134,239,172]];
+  const TAGS=["SUM(sales)","AVG(margin)","r = 0.82","p < 0.05","+12.4%","YoY ▲ 8.1%","GROUP BY region","CALCULATE()","n = 1,338","σ = 4.2","R² = 0.91","ORDER BY revenue DESC","median 52.4","JOIN projects","Q4 ▲","COUNT(*)","DATEADD(-1, YEAR)","x̄ = 37.6"];
+  let series=[], bars=[], tags=[];
+  const rnd=(a,b)=>a+Math.random()*(b-a);
+  function build(){
+    dpr=Math.min(2,devicePixelRatio||1); W=innerWidth; H=innerHeight; cv.width=W*dpr; cv.height=H*dpr;
+    const step=W<700?10:14;
+    series=[.30,.48,.62,.76].map((base,i)=>{const n=Math.ceil(W/step)+3, v=[]; let y=0; for(let k=0;k<n;k++){y+= (Math.random()-.5)*.9 - y*.06; v.push(y)} return {base,amp:H*(.05+.02*i),step,speed:(18+i*7)*(W<700?.7:1),off:0,v,y,col:COL[i]}});
+    bars=Array.from({length:Math.ceil(W/22)},(_,i)=>({p:Math.random()*6.28,s:rnd(.4,1.1)}));
+    tags=Array.from({length:W<700?7:14},()=>spawn(true));
+  }
+  function spawn(init){return {t:TAGS[Math.floor(Math.random()*TAGS.length)],x:rnd(.04,.96)*W,y:init?rnd(.1,.95)*H:H+20,v:rnd(8,18),life:init?rnd(0,1):0}}
+  function draw(dt){
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
+    // background + grid
+    const g=ctx.createRadialGradient(W*.75,H*.35,0,W*.75,H*.35,Math.max(W,H)*.8); g.addColorStop(0,"rgba(103,232,249,.10)"); g.addColorStop(.5,"rgba(167,139,250,.05)"); g.addColorStop(1,"rgba(5,6,8,0)");
+    ctx.fillStyle="#050608"; ctx.fillRect(0,0,W,H); ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle="rgba(255,255,255,.045)"; ctx.lineWidth=1; const gs=64, go=(performance.now()/90)%gs;
+    ctx.beginPath(); for(let x=-go;x<W;x+=gs){ctx.moveTo(x,0);ctx.lineTo(x,H)} for(let y=0;y<H;y+=gs){ctx.moveTo(0,y);ctx.lineTo(W,y)} ctx.stroke();
+    // histogram along the bottom
+    const t=performance.now()/1000;
+    bars.forEach((b,i)=>{const h=(Math.sin(t*b.s+b.p)*.5+.5)*H*.16+H*.03; ctx.fillStyle=`rgba(167,139,250,${.07+.05*Math.sin(t*b.s+b.p)})`; ctx.fillRect(i*22+4,H-h,12,h)});
+    // live line series
+    series.forEach(S=>{
+      S.off+=S.speed*dt; while(S.off>=S.step){S.off-=S.step; S.v.shift(); S.y+=(Math.random()-.5)*.9-S.y*.06; S.v.push(S.y)}
+      const yAt=k=>H*S.base+S.v[k]*S.amp, xAt=k=>k*S.step-S.off, [r,gg,bb]=S.col;
+      ctx.beginPath(); S.v.forEach((_,k)=>{const x=xAt(k),y=yAt(k); k?ctx.lineTo(x,y):ctx.moveTo(x,y)});
+      const lg=ctx.createLinearGradient(0,0,W,0); lg.addColorStop(0,`rgba(${r},${gg},${bb},0)`); lg.addColorStop(.25,`rgba(${r},${gg},${bb},.35)`); lg.addColorStop(1,`rgba(${r},${gg},${bb},.9)`);
+      ctx.strokeStyle=lg; ctx.lineWidth=1.8; ctx.shadowColor=`rgba(${r},${gg},${bb},.6)`; ctx.shadowBlur=10; ctx.stroke(); ctx.shadowBlur=0;
+      ctx.lineTo(xAt(S.v.length-1),H); ctx.lineTo(xAt(0),H); ctx.closePath(); const fg=ctx.createLinearGradient(0,H*S.base-S.amp,0,H); fg.addColorStop(0,`rgba(${r},${gg},${bb},.07)`); fg.addColorStop(1,`rgba(${r},${gg},${bb},0)`); ctx.fillStyle=fg; ctx.fill();
+      // leading point with pulse
+      let k=S.v.length-1; while(k>0&&xAt(k)>W-24)k--; const hx=xAt(k),hy=yAt(k), pr=4+((t*1.4)%1)*12;
+      ctx.fillStyle=`rgba(${r},${gg},${bb},1)`; ctx.beginPath(); ctx.arc(hx,hy,3.2,0,6.283); ctx.fill();
+      ctx.strokeStyle=`rgba(${r},${gg},${bb},${1-((t*1.4)%1)})`; ctx.lineWidth=1; ctx.beginPath(); ctx.arc(hx,hy,pr,0,6.283); ctx.stroke();
+      // pointer crosshair readout
+      if(mx>=0){const kk=Math.max(0,Math.min(S.v.length-1,Math.round((mx+S.off)/S.step))); const cy=yAt(kk);
+        ctx.fillStyle=`rgba(${r},${gg},${bb},.95)`; ctx.beginPath(); ctx.arc(xAt(kk),cy,3.5,0,6.283); ctx.fill();
+        ctx.font='500 11px "Geist Mono",monospace'; ctx.fillText((50-S.v[kk]*12).toFixed(1),xAt(kk)+8,cy-8)}
+    });
+    if(mx>=0){ctx.strokeStyle="rgba(255,255,255,.18)"; ctx.setLineDash([3,5]); ctx.beginPath(); ctx.moveTo(mx,0); ctx.lineTo(mx,H); ctx.stroke(); ctx.setLineDash([])}
+    // drifting query / metric tags
+    ctx.font='400 12px "Geist Mono",monospace';
+    tags.forEach((g2,i)=>{g2.y-=g2.v*dt; g2.life+=dt*.12; const a=Math.min(1,g2.life*3)*Math.max(0,Math.min(1,(g2.y-H*.05)/(H*.25)));
+      ctx.fillStyle=`rgba(200,206,218,${.32*a})`; ctx.fillText(g2.t,g2.x,g2.y); if(g2.y<H*.05) tags[i]=spawn(false)});
+  }
+  function loop(ts){ if(!run) return; const dt=Math.min(.05,(ts-(last||ts))/1000); last=ts; draw(dt); requestAnimationFrame(loop) }
+  build(); draw(0);
+  let rt; addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{build();draw(0)},120)});
+  if(!reduce){
+    new IntersectionObserver(([e])=>{ if(e.isIntersecting&&!run){run=true;last=0;requestAnimationFrame(loop)} else if(!e.isIntersecting) run=false }).observe(sec);
+    sec.addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY});
+    sec.addEventListener("pointerleave",()=>{mx=-1});
+  }
 })();
 
 /* ============================ misc ============================ */
