@@ -514,6 +514,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .drop-foot{position:relative;z-index:2;border-top:1px solid var(--line);color:var(--faint)}
 .drop-foot a{color:var(--muted)}
 
+.btn.dl:hover svg{transform:translateY(2px)}
+
 /* Toast + palette */
 #toast{position:fixed;left:50%;bottom:28px;z-index:160;transform:translate(-50%,140%);padding:12px 18px;border-radius:14px;background:var(--text);color:var(--bg);font-size:.88rem;transition:transform .5s var(--ease)}
 #toast.show{transform:translate(-50%,0)}
@@ -770,6 +772,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p class="drop-lead reveal">Open to collaborating on impactful data analytics and AI projects. Based in Bengaluru and working on IST.</p>
       <a class="mail magnetic" href="mailto:navagowdaas@gmail.com" data-cursor="Write">navagowdaas@gmail.com <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       <div class="contact-actions">
+        <a class="btn primary dl magnetic" id="cvBtn" href="Nava-Gowda-A-S-CV.pdf" download="Nava-Gowda-A-S-CV.pdf" data-cursor="PDF">Download CV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
         <button class="btn ghost magnetic" id="copyMail">Copy email</button>
         <a class="btn ghost magnetic" href="https://github.com/navagowda" target="_blank" rel="noopener">GitHub</a>
         <a class="btn primary magnetic" href="https://www.linkedin.com/in/nava-gowda-a-s-0970102b2/" target="_blank" rel="noopener">Connect on LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1544,6 +1547,7 @@ const PAL=[
   ...SAMPLES.map(([l,q])=>({l:"Run query: "+l,h:"SQL",run:()=>{$("#console").scrollIntoView({behavior:"smooth"});setTimeout(()=>typeQuery(q),500)}})),
   ...DATA.projects.map(p=>({l:"Project: "+p.title,h:p.tool,run:()=>openProject(p.id)})),
   ...DATA.certifications.filter(c=>c.img).map(c=>({l:"Certificate: "+c.title,h:"View",run:()=>openCert(c.credential_id)})),
+  {l:"Download CV (PDF)",h:"File",run:()=>$("#cvBtn").click()},
   {l:"Microsoft Learn transcript",h:"Go to",run:()=>$("#msLearn").scrollIntoView({behavior:"smooth",block:"center"})},
   {l:"Toggle light or dark theme",h:"Action",run:()=>$("#themeBtn").click()},
   {l:"Copy email address",h:"Action",run:()=>copy(EMAIL,"Email address copied")},
